@@ -1,14 +1,3 @@
-var hamburger = document.getElementsByClassName("hamburger");
-var overlay = document.getElementsByClassName("overlay");
-var menu = document.getElementsByClassName("menu");
-
-hamburger[0].addEventListener("click", () => {
-  overlay[0].classList.toggle("active");
-  menu[0].classList.toggle("active");
-  hamburger[0].classList.toggle("active");
-  menu[0].classList.toggle("container");
-});
-
 var slideIndex = 1;
 showSlides(slideIndex);
 

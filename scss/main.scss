@@ -1,8 +1,9 @@
 @import './resets';
 @import './variables';
+@import './nav';
 @import './hamburger';
-@import './header';
-@import './about-us';
-@import './collection';
-@import './gallery';
+@import './home/header';
+@import './home/about-us';
+@import './home/collection';
+@import './home/gallery';
 @import './footer';

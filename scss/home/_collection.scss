@@ -27,7 +27,7 @@
             letter-spacing: -1px;
             background-color: transparent;
             border: none;
-            font-size: 18px;
+            font-size: $font-p;
             color: $black;
             cursor: pointer;
             text-align: left;
@@ -52,7 +52,7 @@
 
             .details {
                 padding-top: 40px;
-                font-size: 18px;
+                font-size: $font-p;
                 color: $black;
 
                 .item-title {
