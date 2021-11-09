@@ -67,10 +67,22 @@ header {
 
             span {
                 font-size: 30px;
+
+                &.color:nth-child(even) {
+                    color: $white;
+                }
+
+                &.color:nth-child(odd) {
+                    color: $black;
+                }
             }
 
             .top {
                 transform: translateX(-5%);
+            }
+
+            .bottom {
+                transform: translateX(5%);
             }
         }
     }

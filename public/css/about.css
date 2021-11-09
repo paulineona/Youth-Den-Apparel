@@ -516,8 +516,17 @@ header {
 .about .youth-den-p span {
   font-size: 30px;
 }
+.about .youth-den-p span.color:nth-child(even) {
+  color: #FFFFFF;
+}
+.about .youth-den-p span.color:nth-child(odd) {
+  color: #000000;
+}
 .about .youth-den-p .top {
   transform: translateX(-5%);
+}
+.about .youth-den-p .bottom {
+  transform: translateX(5%);
 }
 
 @media only screen and (min-width: 1024px) {
