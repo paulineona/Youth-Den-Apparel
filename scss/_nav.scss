@@ -58,7 +58,15 @@ nav {
             }
 
             .icon2 {
-                background-image: url(../images/icons/heart_black.png);
+                display: none;
+                position: relative;
+
+                a {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                }
             }
 
             .hamburger {
@@ -89,10 +97,6 @@ nav {
                 }
 
                 .icon2 {
-                    background-image: url(../images/icons/heart_black.png) !important;
-                }
-
-                .hamburger {
                     background-image: url(../images/icons/user_black.png) !important;
                 }
             }
@@ -130,13 +134,14 @@ nav {
                     .icon1 {
                         background-image: url(../images/icons/bag_white.png);
                     }
-    
+
                     .icon2 {
-                        background-image: url(../images/icons/heart_white.png);
+                        display: block;
+                        background-image: url(../images/icons/user_white.png);
                     }
     
                     .hamburger {
-                        background-image: url(../images/icons/user_white.png);
+                        display: none;
                     }
                 }
             }

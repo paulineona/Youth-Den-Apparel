@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Sign Up</title>
 
     <link rel="icon" type="image/png" href="../images/logo/logo-arvene-ver.png">
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="stylesheet" href="../css/sign-up.css">
 </head>
 <body>
     
@@ -35,7 +35,7 @@
                                 <a class="nav-link" href="">faq</a>
                             </li>
                             <div class="sign-in">
-                                <button class="btn-signIn"><a href="sign-up.html">sign in</a></button>
+                                <button class="btn-signIn"><a href="#">sign in</a></button>
                             </div>
                         </ul>
                     </div>
@@ -44,7 +44,7 @@
                     <div class="navbar-button icon1">
                     </div>
                     <div class="navbar-button icon2">
-                        <a href="sign-up.html"></a>
+                        <a href="#"></a>
                     </div>
                     <div class="navbar-button hamburger">
                     </div>
@@ -53,41 +53,40 @@
         </nav>
     </header>
 
-    <!-- ABOUT -->
-    <section class="about">
+    <section class="signUp">
         <div class="container">
-            <div class="hero reverse">
-                <div class="intro">
-                    <div class="heading">
-                        <h1>Lorem ipsum Lorem ipsum Lorem ipsum </h1>
+            <h1 class="title">Create An Account</h1>
+            <hr class="line">
+            <form class="form" action="">
+                <div class="top">
+                    <div class="left">
+                        <label for="fname">First Name</label><br>
+                        <input type="text" name="fname" id="fname"><br>
                     </div>
-                    <div class="bottom">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ipsa ab necessitatibus? Amet, tempore ad unde perspiciatis magni hic eos consectetur harum ea quaerat maxime ullam dolorem, accusamus, assumenda architecto?</p>
-                        <br>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, voluptates similique! Error ducimus ab assumenda vitae tempore odit. Soluta vel exercitationem libero, sunt ratione aperiam consequatur debitis impedit odit deserunt sapiente error in nihil? Necessitatibus eligendi pariatur blanditiis possimus expedita neque adipisci facilis voluptatibus dolorem quis sint, saepe cupiditate totam!</p>
-                    </div>
-                </div>
-                <div class="pic pic1"></div>
-            </div>
-            <div class="hero row">
-                <div class="intro">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque facilis dicta eius impedit explicabo unde temporibus ad quibusdam ducimus officia omnis quasi optio aut, nesciunt, tempore hic velit aspernatur esse.</p>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque facilis dicta eius impedit explicabo unde temporibus ad quibusdam ducimus officia omnis quasi optio aut, nesciunt, tempore hic velit aspernatur esse.</p>
-                </div>
-                <div class="pic pic2"></div>
-            </div>
-            <div class="youth-den">
-                <img class="yd-pic" src="../images/pics/pic53.jpg" alt="">
-                <img class="yd-pic" src="../images/pics/pic27.jpg" alt="">
-                <img class="yd-pic" src="../images/pics/pic61.jpg" alt="">
-                <div class="youth-den-p">
-                    <div class="top">
-                    </div>
-                    <div class="bottom">
+                    <div class="right">
+                        <label for="fname">Last Name</label><br>
+                        <input type="text" name="fname" id="fname"><br>
                     </div>
                 </div>
-            </div>
+                <div class="bottom">
+                    <div class="left">
+                        <label for="email">Email</label><br>
+                        <input type="email" name="email" id="email"><br>
+                    </div>
+                    <div class="right">
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" id="password"><br>
+                    </div>
+                </div>
+                <div class="btns">
+                    <div class="left">
+                        <button class="btn-signUp"><a href="">Sign Up</a></button> 
+                    </div>
+                    <div class="right">
+                        <p>Returning Customer?<a href="login.html" class="login">Login</a></p>
+                    </div>
+                </div>
+            </form>
         </div>
     </section>
 
@@ -148,6 +147,6 @@
     </footer>
 
     <script src="../js/hamburger.js"></script>
-    <script src="../js/span-youthden.js"></script>
+
 </body>
 </html>
