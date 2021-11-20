@@ -7,7 +7,7 @@
     <title>Log In</title>
 
     <link rel="icon" type="image/png" href="../images/logo/logo-arvene-ver.png">
-    <link rel="stylesheet" href="../css/log-in.css">
+    <link rel="stylesheet" href="public/css/log-in.css">
 </head>
 <body>
     
@@ -18,24 +18,24 @@
             <div class="container navbar">
                 <div class="navbar-left">
                     <div class="navbar-logo">
-                        <a href="../../index.html"><img src="../images/logo/logo-arvene-ver.png" alt="logo"></a>
+                        <a href="index.php"><img src="public/images/logo/logo-arvene-ver.png" alt="logo"></a>
                     </div>
                     <div class="overlay">
                         <ul class="menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../../index.html">home</a>
+                                <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">shop</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">about</a>
+                                <a class="nav-link" href="about.php">about</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">faq</a>
                             </li>
                             <div class="sign-in">
-                                <button class="btn-signIn"><a href="#">sign in</a></button>
+                                <button class="btn-signIn"><a href="sign-up.php">sign in</a></button>
                             </div>
                         </ul>
                     </div>
@@ -44,7 +44,7 @@
                     <div class="navbar-button icon1">
                     </div>
                     <div class="navbar-button icon2">
-                        <a href="#"></a>
+                        <a href="sign-up.php"></a>
                     </div>
                     <div class="navbar-button hamburger">
                     </div>
@@ -73,7 +73,7 @@
                         <button class="btn-logIn"><a href="">Login</a></button> 
                     </div>
                     <div class="right">
-                        <p>New Customer?<a href="sign-up.html" class="sign-up">Sign up</a></p>
+                        <p>New Customer?<a href="sign-up.php" class="sign-up">Sign up</a></p>
                     </div>
                 </div>
             </form>
@@ -95,13 +95,13 @@
                 <div class="nav">
                     <ul class="menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">home</a>
+                            <a class="nav-link" href="index.php">home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">about</a>
+                            <a class="nav-link" href="about.php">about</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">faq</a>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="yd-contact">
                     <div class="footer-logo">
-                        <a href="#"><img src="../images/logo/logo-arvene-ver.png" alt="logo"></a>
+                        <a href="#"><img src="public/images/logo/logo-arvene-ver.png" alt="logo"></a>
                     </div>
                     <div class="contacts">
                         <p>Youth Den Store, No.101 Lipa City, Malvar, Batangas</p>
@@ -136,7 +136,7 @@
         </div>
     </footer>
 
-    <script src="../js/hamburger.js"></script>
-
+    <script src="public/js/hamburger.js"></script>
+    
 </body>
 </html>

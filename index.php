@@ -24,19 +24,19 @@
                     <div class="overlay">
                         <ul class="menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">home</a>
+                                <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">shop</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./public/html/about.html">about</a>
+                                <a class="nav-link" href="about.php">about</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">faq</a>
                             </li>
                             <div class="sign-in">
-                                <button class="btn-signIn"><a href="./public/html/sign-up.html">sign in</a></button>
+                                <button class="btn-signIn"><a href="sign-up.php">sign in</a></button>
                             </div>
                         </ul>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="navbar-button icon1">
                     </div>
                     <div class="navbar-button icon2">
-                        <a href="./public/html/sign-up.html"></a>
+                        <a href="sign-up.php"></a>
                     </div>
                     <div class="navbar-button hamburger">
                     </div>
@@ -226,13 +226,13 @@
                 <div class="nav">
                     <ul class="menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">home</a>
+                            <a class="nav-link" href="index.php">home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="public/html/about.html">about</a>
+                            <a class="nav-link" href="about.php">about</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">faq</a>

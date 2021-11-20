@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 
-    <link rel="icon" type="image/png" href="../images/logo/logo-arvene-ver.png">
-    <link rel="stylesheet" href="../css/about.css">
+    <link rel="icon" type="image/png" href="public/images/logo/logo-arvene-ver.png">
+    <link rel="stylesheet" href="public/css/about.css">
 </head>
 <body>
     
@@ -18,24 +18,24 @@
             <div class="container navbar">
                 <div class="navbar-left">
                     <div class="navbar-logo">
-                        <a href="../../index.html"><img src="../images/logo/logo-arvene-ver.png" alt="logo"></a>
+                        <a href="index.php"><img src="public/images/logo/logo-arvene-ver.png" alt="logo"></a>
                     </div>
                     <div class="overlay">
                         <ul class="menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="../../index.html">home</a>
+                                <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">shop</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about.html">about</a>
+                                <a class="nav-link" href="about.php">about</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="">faq</a>
                             </li>
                             <div class="sign-in">
-                                <button class="btn-signIn"><a href="sign-up.html">sign in</a></button>
+                                <button class="btn-signIn"><a href="sign-up.php">sign in</a></button>
                             </div>
                         </ul>
                     </div>
@@ -44,7 +44,7 @@
                     <div class="navbar-button icon1">
                     </div>
                     <div class="navbar-button icon2">
-                        <a href="sign-up.html"></a>
+                        <a href="sign-up.php"></a>
                     </div>
                     <div class="navbar-button hamburger">
                     </div>
@@ -78,9 +78,9 @@
                 <div class="pic pic2"></div>
             </div>
             <div class="youth-den">
-                <img class="yd-pic" src="../images/pics/pic53.jpg" alt="">
-                <img class="yd-pic" src="../images/pics/pic27.jpg" alt="">
-                <img class="yd-pic" src="../images/pics/pic61.jpg" alt="">
+                <img class="yd-pic" src="public/images/pics/pic53.jpg" alt="">
+                <img class="yd-pic" src="public/images/pics/pic27.jpg" alt="">
+                <img class="yd-pic" src="public/images/pics/pic61.jpg" alt="">
                 <div class="youth-den-p">
                     <div class="top">
                     </div>
@@ -106,13 +106,13 @@
                 <div class="nav">
                     <ul class="menu">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">home</a>
+                            <a class="nav-link" href="index.php">home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">about</a>
+                            <a class="nav-link" href="about.php">about</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">faq</a>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="yd-contact">
                     <div class="footer-logo">
-                        <a href="#"><img src="../images/logo/logo-arvene-ver.png" alt="logo"></a>
+                        <a href="#"><img src="public/images/logo/logo-arvene-ver.png" alt="logo"></a>
                     </div>
                     <div class="contacts">
                         <p>Youth Den Store, No.101 Lipa City, Malvar, Batangas</p>
@@ -147,7 +147,7 @@
         </div>
     </footer>
 
-    <script src="../js/hamburger.js"></script>
-    <script src="../js/span-youthden.js"></script>
+    <script src="public/js/hamburger.js"></script>
+    <script src="public/js/span-youthden.js"></script>
 </body>
 </html>
