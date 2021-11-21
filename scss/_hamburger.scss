@@ -43,28 +43,7 @@
                 margin-top: 60px;
 
                 .btn-signIn {
-                    display: block;
-                    font-family: helveticaNeueLt;
-                    width: 350px;
-                    height: 60px;
-                    border-radius: 10px;
-                    background-color: $black;
-                    text-transform: uppercase;
-                    font-size: $font-p;
-                    cursor: pointer;
-
-                    a {
-                        text-decoration: none;
-                        color: $white;
-                    }
-
-                    &:hover {
-                        background-color: $white;
-
-                        a {
-                            color: $black;
-                        }
-                    }
+                    @include btn(100%, 60px);
                 }
             }
         }

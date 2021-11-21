@@ -461,121 +461,156 @@ footer .all-rights {
     padding: 5px 0;
   }
 }
-header {
-  background-color: #FFFFFF;
+.shirt img {
+  width: 100%;
+  height: 400px;
 }
 
-.about {
+.product {
   font-family: helveticaNeueLt;
   color: #000000;
-  padding-top: 70px;
+  padding: 70px 0 100px;
 }
-.about .heading {
-  padding: 80px 0;
+.product .hero {
+  display: flex;
+  flex-direction: column;
+}
+.product .hero .info {
+  padding-top: 30px;
+}
+.product .hero .info .price {
+  padding: 10px 0 30px;
+}
+.product .hero .description h3 {
+  text-transform: none;
+}
+.product .hero .description p {
+  padding: 10px 0 30px;
+}
+.product .hero .size {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product .hero .size p {
+  padding-right: 50px;
+}
+.product .hero .size span {
+  cursor: pointer;
+}
+.product .hero .size span:last-child {
+  padding-right: 50px;
+}
+.product .hero .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product .hero .quantity .count {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
-.about .heading h1 {
-  width: 250px;
+.product .hero .quantity .count .btn-quantity {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
 }
-.about .pic {
+.product .hero .quantity .count span {
+  padding: 0 15px;
+}
+.product .hero .line {
+  display: block;
+  margin: 10px 0;
+  background-color: #000000;
+  height: 4px;
+}
+.product .hero .bag {
+  margin-top: 30px;
+}
+.product .hero .bag .btn-bag {
+  display: block;
+  font-family: helveticaNeueLt;
   width: 100%;
-  margin: 50px 0;
-  height: 600px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #000000;
+  text-transform: uppercase;
+  font-size: 18px;
+  cursor: pointer;
 }
-.about .pic1 {
-  background-image: url(../../public/images/pics/pic15.jpg);
-}
-.about .pic2 {
-  background-image: url(../../public/images/pics/pic49.jpg);
-}
-.about .youth-den {
-  width: 100%;
-  height: 450px;
-  position: relative;
-  margin: 150px 0;
-}
-.about .youth-den .yd-pic {
-  position: absolute;
-  width: 250px;
-  height: 300px;
-}
-.about .youth-den .yd-pic:nth-of-type(1) {
-  left: 0;
-}
-.about .youth-den .yd-pic:nth-of-type(2) {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.about .youth-den .yd-pic:nth-of-type(3) {
-  right: 0;
-  bottom: 0;
-}
-.about .youth-den-p {
-  font-family: helvetica93;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.about .youth-den-p span {
-  font-size: 30px;
-}
-.about .youth-den-p span.color:nth-child(even) {
+.product .hero .bag .btn-bag a {
+  text-decoration: none;
   color: #FFFFFF;
 }
-.about .youth-den-p span.color:nth-child(odd) {
+.product .hero .bag .btn-bag:hover {
+  background-color: #FFFFFF;
+}
+.product .hero .bag .btn-bag:hover a {
   color: #000000;
 }
-.about .youth-den-p .top {
-  transform: translateX(-5%);
+
+.recommend h2.line {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-transform: none;
 }
-.about .youth-den-p .bottom {
-  transform: translateX(5%);
+.recommend h2.line::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  height: 1px;
+  margin-left: 340px;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+.recommend .shirts .shirt {
+  cursor: pointer;
+  margin: 30px 0;
+}
+.recommend .shirts .shirt img {
+  padding-bottom: 10px;
 }
 
 @media only screen and (min-width: 1024px) {
-  .about .hero {
+  .product {
+    padding-bottom: 120px;
+  }
+  .product .hero {
+    padding-top: 50px;
+    flex-direction: row;
+    align-items: center;
+    height: 700px;
+  }
+  .product .hero .shirt img {
+    width: 700px;
+    height: 100%;
+  }
+  .product .hero .right {
+    flex: 1;
+    flex-direction: column;
+    padding: 0 50px;
+  }
+
+  .recommend h2.line::after {
+    margin-left: 700px;
+  }
+  .recommend .shirts {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .about .hero .intro {
-    flex: 1;
+  .recommend .shirts .shirt {
+    margin: 50px 0;
   }
-  .about .hero .intro .heading {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 0;
+  .recommend .shirts .shirt img {
+    padding-bottom: 10px;
+    width: 400px;
+    height: 400px;
   }
-  .about .hero .intro .heading h1 {
-    width: 700px;
+  .recommend .shirts .shirt h2 {
+    font-size: 28px !important;
   }
-  .about .hero .pic {
-    width: 500px;
-  }
-  .about .reverse {
-    flex-direction: row-reverse;
-  }
-  .about .reverse .intro {
-    padding-left: 100px;
-  }
-  .about .row .intro {
-    padding-right: 100px;
-  }
-  .about .youth-den {
-    width: 650px;
-    height: 650px;
-    margin: 150px auto;
-  }
-  .about .youth-den .yd-pic {
-    width: 350px;
-    height: 450px;
-  }
-}/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=product.css.map */
