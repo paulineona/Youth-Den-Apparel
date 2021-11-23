@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In</title>
+    <title>Cart</title>
 
-    <link rel="icon" type="image/png" href="../images/logo/logo-arvene-ver.png">
-    <link rel="stylesheet" href="public/css/log-in.css">
+    <link rel="icon" type="image/png" href="public/images/logo/logo-arvene-ver.png">
+    <link rel="stylesheet" href="public/css/cart.css">
 </head>
 <body>
     
@@ -54,30 +54,77 @@
         </nav>
     </header>
 
-    <section class="logIn">
+    <!-- PRODUCT  -->
+    <section class="cart">
         <div class="container">
-            <h1 class="title">Login</h1>
-            <hr class="line">
-            <form class="form" action="">
-                <div class="top">
-                    <div class="left">
-                        <label for="email">Email</label><br>
-                        <input type="email" name="email" id="email"><br>
+            <div class="bag">
+                <h2>your bag</h2>
+                <div class="header">
+                    <ul>
+                        <li>Item</li>
+                        <li>Size</li>
+                        <li>Quantity</li>
+                        <li>Price</li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="item num1">
+                    <ul>
+                        <li><img src="public/images/shirts/shirt front only/hightimes.png" alt=""></li>
+                        <div class="details">
+                            <div class="productName_price">
+                                <li class="productName">Hightimes</li>
+                                <li class="productPrice">PHP 750.00</li>
+                            </div>
+                            <li class="size">M</li>
+                            <div class="quantity">
+                                <li>Quantity: </li>
+                                <div class="count">
+                                    <li><img id="reduce" class="btn-quantity" src="public/images/icons/remove.png" alt=""></li>
+                                    <li>1</li>
+                                    <li><img id="add" class="btn-quantity" src="public/images/icons/plus.png" alt=""></li>
+                                </div>
+                            </div>
+                            <li><button class="remove">Remove</button></li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="item num2">
+                    <ul>
+                        <li><img src="public/images/shirts/shirt front only/coffeeclub.png" alt=""></li>
+                        <div class="details">
+                            <div class="productName_price">
+                                <li class="productName">Coffee Club</li>
+                                <li class="productPrice">PHP 550.00</li>
+                            </div>
+                            <li class="size">M</li>
+                            <div class="quantity">
+                                <li>Quantity: </li>
+                                <div class="count">
+                                    <li><img id="reduce" class="btn-quantity" src="public/images/icons/remove.png" alt=""></li>
+                                    <li>1</li>
+                                    <li><img id="add" class="btn-quantity" src="public/images/icons/plus.png" alt=""></li>
+                                </div>
+                            </div>
+                            <li><button class="remove">Remove</button></li>
+                        </div>
+                    </ul>
+                </div>
+                <hr class="line">
+                <div class="receipt">
+                    <div class="subtotal">
+                        <p class="title">subtotal</p>
+                        <p class="price">PHP 1300.00</p>
                     </div>
-                    <div class="right">
-                        <label for="password">Password</label><br>
-                        <input type="password" name="password" id="password"><br>
+                    <div class="shipping">
+                        <p class="title">shipping</p>
+                        <p>Calculated at checkout</p>
                     </div>
                 </div>
-                <div class="btns">
-                    <div class="left">
-                        <button class="btn-logIn"><a href="">Login</a></button> 
-                    </div>
-                    <div class="right">
-                        <p>New Customer?<a href="sign-up.php" class="sign-up">Sign up</a></p>
-                    </div>
+                <div class="checkout">
+                    <button class="btn-checkout"><a href="checkout.php">continue to checkout</a></button>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
 
@@ -138,6 +185,6 @@
     </footer>
 
     <script src="public/js/hamburger.js"></script>
-    
+
 </body>
 </html>

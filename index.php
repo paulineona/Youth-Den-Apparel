@@ -43,6 +43,7 @@
                 </div>
                 <div class="navbar-right">
                     <div class="navbar-button icon1">
+                        <a href="cart.php"></a>
                     </div>
                     <div class="navbar-button icon2">
                         <a href="sign-up.php"></a>

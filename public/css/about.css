@@ -139,9 +139,11 @@ nav .navbar-right .icon1 {
 }
 nav .navbar-right .icon2 {
   display: none;
+}
+nav .navbar-right .icon1, nav .navbar-right .icon2 {
   position: relative;
 }
-nav .navbar-right .icon2 a {
+nav .navbar-right .icon1 a, nav .navbar-right .icon2 a {
   display: block;
   position: absolute;
   width: 100%;
@@ -316,7 +318,7 @@ nav .navbar-right .hamburger {
 footer {
   background-color: #FFFFFF;
   color: #000000;
-  padding-top: 100px;
+  padding-top: 200px;
 }
 footer .newsletter {
   padding-bottom: 280px;

@@ -42,6 +42,7 @@
                 </div>
                 <div class="navbar-right">
                     <div class="navbar-button icon1">
+                        <a href="cart.php"></a>
                     </div>
                     <div class="navbar-button icon2">
                         <a href="sign-up.php"></a>
@@ -84,7 +85,7 @@
                     </div>
                     <hr class="line">
                     <div class="bag">
-                        <button class="btn-bag"><a href="checkout.php">add to bag</a></button>
+                        <button class="btn-bag"><a href="bag.php">add to bag</a></button>
                     </div>
                 </div>
             </div>
