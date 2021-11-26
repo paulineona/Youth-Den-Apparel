@@ -30,10 +30,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <button><a href="productsAdd.php">ADD</a></button>
+
     <div class="card-body container">
         <table>
             <thead>
@@ -54,7 +56,8 @@
                             echo "<td class=\"img-center\">" . "<img id=\"image\" src=$img>" . $row['product_name'] . "</td>";
                             echo "<td> Php. " . $row['product_price'] . ".00</td>";
                             echo "<td>" . $row['stock'] . "</td>";
-                            echo "<td>E D</td>";
+                            echo "<td><button><a href=\"productsEdit.php?id=" . $row['id'] . "\">Edit</a></button>
+                                    <button><a href=\"productsDelete.php?id=" . $row['id'] . "\">Delete</a></button></td>";
                         echo "</tr>\n";
                     }
                 ?>
@@ -78,7 +81,7 @@
                     }
 
                     if ($i > $page) {
-                        echo "<li><a href='index.php?page=".($page+1)."' class='page previous'>Next</a></li>";
+                        echo "<li><a href='index.php?page=".($page+1)."' class='page next'>Next</a></li>";
                     }
                 ?>
             </ul>

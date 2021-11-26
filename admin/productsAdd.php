@@ -21,12 +21,8 @@
         <input type="text" name="featured"><br>
         <label for="img">Image Name:</label><br>
         <input type="file" name="img_name"><br><br>
-        <button type="submit" name="submit">Submit</button>
+        <button type="submit" name="submit" value="submit">Submit</button>
     </form>
-
-    <?php
-        include 'products.php';
-    ?>
 
 </body>
 </html>
