@@ -12,6 +12,7 @@
     <title>Youth Den</title>
   </head>
   <body id="body-pd">
+
     <!-- header -->
     <header class="header" id="header">
       <div class="header__toggle">
@@ -27,17 +28,17 @@
     <div class="l-navbar" id="nav-bar">
       <nav class="nav">
         <div>
-          <a href="#" class="nav__logo">
+          <a href="index.html" class="nav__logo">
             <img src="assets/img/logo.png" />
             <span class="nav__logo-name">Youth Den</span>
           </a>
 
           <div class="nav__list">
-            <a href="#" class="nav__link active">
+            <a href="index.html" class="nav__link active">
               <i class="bx bx-grid-alt nav__icon"></i>
               <span class="nav__name">Dashboard</span>
             </a>
-            <a href="#" class="nav__link">
+            <a href="products.html" class="nav__link">
               <i class="bx bx-shopping-bag nav__icon"></i>
               <span class="nav__name">Products</span>
             </a>
@@ -71,23 +72,57 @@
     </div>
 
     <!-- dashboard-->
-    <h1>Dashboard</h1>
-    <h4>Welcome back Admin.</h4>
-    <div class="dashboard">
-      <div class="dashboard-banner">
-        <img src="assets/img/dashboard pic.png" id="image-db" alt="" />
-        <div class="banner-text">
-          <h3>
-            <span>Since your last login on the system, there were:</span><br />
-            <ul>
-              <li>Changes in the system.</li>
-              <li>Updates on the products.</li>
-              <li>Huge progress in the sales.</li>
-            </ul>
-          </h3>
+    <div class="container">     
+      <h1>Dashboard</h1>
+      <h4>Welcome back Admin.</h4>
+      <div class="dashboard">
+        <div class="dashboard-banner">
+          <img src="assets/img/dashboard pic.png" id="image-db" alt="" />
+          <div class="banner-text">
+            <h3>
+              <span>Since your last login on the system, there were:</span><br />
+              <ul>
+                <li>Changes in the system.</li>
+                <li>Updates on the products.</li>
+                <li>Huge progress in the sales.</li>
+              </ul>
+            </h3>
+          </div>
+        </div>
+        <div class="dashboard-statistics">
+          <div class="grid-item">
+            <a href="">
+              <p>Total Sales</p>
+              <span class="stats">40 121</span>
+              <img src="assets/img/graph.png" alt="">
+            </a>
+          </div>
+          <div class="grid-item">
+            <a href="">
+              <p>Total Order</p>
+              <span class="stats">1367</span>
+              <img src="assets/img/order not active.png" alt="">
+            </a>
+          </div>
+          <div class="grid-item">
+            <a href="">
+              <p>Total Product</p>
+              <span class="stats">400</span>
+              <img src="assets/img/product not active.png" alt="">
+            </a>
+          </div>
+          <div class="grid-item">
+            <a href="">
+              <p>Total User</p>
+              <span class="stats">40</span>
+              <img src="assets/img/customer not active.png" alt="">
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
     <script src="assets/js/main.js"></script>
+
   </body>
 </html>

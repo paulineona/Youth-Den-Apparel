@@ -56,7 +56,7 @@
             exit($errorMessage);
         }	
         closeCon($con);
-        header("location: products.php"); // it will redirect to products.php
+        header("location: dashboard/products.php"); // it will redirect to products.php
     }
 
 ?>

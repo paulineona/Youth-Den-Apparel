@@ -25,3 +25,29 @@ function colorLink() {
   }
 }
 linkColor.forEach((l) => l.addEventListener("click", colorLink));
+
+
+// MODAL
+const modal = document.getElementsByClassName("modal")[0];
+const closeModal = document.getElementsByClassName("modal-close")[0];
+const addProduct = document.getElementsByClassName("btn-addProduct")[0];
+
+addProduct.addEventListener("click", (event) => {
+  event.preventDefault();
+  modal.classList.add("active");
+});
+
+closeModal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+// IMAGE UPLOAD 
+const imgInput = document.getElementsByClassName("img-input")[0];
+const inputFile = document.getElementById("insertFile");
+
+imgInput.addEventListener("click", click_the_button);
+
+function click_the_button(event, btn) {
+  inputFile.click();
+  event.preventDefault();
+};
