@@ -25,6 +25,7 @@ function colorLink() {
   }
 }
 linkColor.forEach((l) => l.addEventListener("click", colorLink));
+<<<<<<< HEAD:admin/dashboard/assets/js/main.js
 
 
 // MODAL
@@ -51,3 +52,5 @@ function click_the_button(event, btn) {
   inputFile.click();
   event.preventDefault();
 };
+=======
+>>>>>>> ef86b7f98f80c5522b7202270684480cd92fe229:dashboard/assets/js/main.js
