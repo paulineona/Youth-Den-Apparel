@@ -9,7 +9,7 @@
     />
     <link rel="icon" href="assets/img/logo.png" type="icon" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>Youth Den</title>
+    <title>Settings</title>
   </head>
   <body id="body-pd">
     <!-- header -->
@@ -37,7 +37,7 @@
               <i class="bx bx-grid-alt nav__icon"></i>
               <span class="nav__name">Dashboard</span>
             </a>
-            <a href="#" class="nav__link">
+            <a href=" products.php" class="nav__link">
               <i class="bx bx-shopping-bag nav__icon"></i>
               <span class="nav__name">Products</span>
             </a>
@@ -79,7 +79,9 @@
               <tr>
                 <th class="title-setting">Profile Picture</th>
                 <td class="data-setting">
-                  <input class="custom-profile-input" type="file">
+                  <button class="btn-profileInput" onclick="click_the_button(files);">
+                  <input id="custom-profile-input" type="file">
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -108,7 +110,6 @@
                   </button>
                 </td>
               </tr>
-
         </div>
       </div>
     </div>

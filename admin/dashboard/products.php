@@ -61,32 +61,32 @@
         </a>
 
         <div class="nav__list">
-          <a href="index.html" class="nav__link active">
+          <a href="index.html" class="nav__link">
             <i class="bx bx-grid-alt nav__icon"></i>
             <span class="nav__name">Dashboard</span>
           </a>
-          <a href="products.html" class="nav__link">
+          <a href="products.php" class="nav__link active">
             <i class="bx bx-shopping-bag nav__icon"></i>
             <span class="nav__name">Products</span>
           </a>
 
-          <a href="#" class="nav__link">
+          <a href="customers.html" class="nav__link">
             <i class="bx bx-group nav__icon"></i>
             <span class="nav__name">Customers</span>
           </a>
 
-          <a href="#" class="nav__link">
+          <a href="orders.html" class="nav__link">
             <i class="bx bx-basket nav__icon"></i>
             <span class="nav__name">Orders</span>
           </a>
 
-          <a href="#" class="nav__link">
+          <a href="staff.html" class="nav__link">
             <i class="bx bx-user-circle nav__icon"></i>
             <span class="nav__name">Our Staff</span>
           </a>
 
-          <a href="#" class="nav__link">
-            <i class="bx bx-bar-chart-alt-2 nav__icon"></i>
+          <a href="setting.html" class="nav__link">
+            <i class="bx bx-cog nav__icon"></i>
             <span class="nav__name">Settings</span>
           </a>
         </div>
@@ -126,11 +126,11 @@
               while ($row = $result->fetch_array()) { // fetch data in sql
                   echo "<tr>";
                       $img = "../images/" . $row['img_name'];
-                      echo "<td>" . $row['id'] . "</td>";
+                      echo "<td class=\"data\">" . $row['id'] . "</td>";
                       echo "<td class=\"img-center\">" . "<img id=\"image\" src=$img>" . $row['product_name'] . "</td>";
-                      echo "<td> Php. " . $row['product_price'] . ".00</td>";
-                      echo "<td>" . $row['stock'] . "</td>";
-                      echo "<td><a href=\"../productsEdit.php?id=" . $row['id'] . "\"><img id=\"editBtn\" src=\"assets/img/edit.png\" alt=\"\"></a>
+                      echo "<td class=\"data\"> Php. " . $row['product_price'] . ".00</td>";
+                      echo "<td class=\"data\">" . $row['stock'] . "</td>";
+                      echo "<td class=\"data\"><a href=\"../productsEdit.php?id=" . $row['id'] . "\"><img id=\"editBtn\" src=\"assets/img/edit.png\" alt=\"\"></a>
                               <a href=\"../productsDelete.php?id=" . $row['id'] . "\"><img id=\"deleteBtn\" src=\"assets/img/bin.png\" alt=\"\"></a></td>";
                   echo "</tr>\n";
               }
@@ -168,7 +168,7 @@
     <img class="modal-close" src="assets/img/cancel.png" alt="">
     <div class="addProduct-modal">
       <h3>Add Products</h3>
-      <h4>Add your product and necessary information from here</h4>
+      <h4>Add your product and necessary information here</h4>
       <form action="../upload.php" method="POST" enctype="multipart/form-data"> <!--enctype="multipart/form-data is necessary to upload files in form -->
         <div class="item">
           <label for="img">Product Image</label>
@@ -180,16 +180,16 @@
           <input id="productNameInput" type="text" name="product_name" placeholder="Product Name">
         </div>
         <div class="item">
-          <label for="price">Price:</label>
-          <input type="text" name="product_price" placeholder="Price">
+          <label for="price">Price</label>
+          <input id="productPrice" type="text" name="product_price" placeholder="Price">
         </div>
         <div class="item">
-          <label for="description">Description:</label>
+          <label for="description">Description</label>
           <textarea name="description" id="description" cols="30" rows="10" placeholder="Product Details"></textarea>
         </div>
         <div class="item">
-          <label for="stock">Stock:</label>
-          <input type="text" name="stock" placeholder="Product Quantity">
+          <label for="stock">Stock</label>
+          <input type="text" id="productQuantity"name="stock" placeholder="Product Quantity">
         </div>
         
         <button id="btn-submit" type="submit" name="submit" value="submit">Add Product</button>
