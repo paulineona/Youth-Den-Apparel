@@ -184,6 +184,7 @@ h4 {
   border-radius: 33px;
   background-color: var(--white-color);  
   padding: 1rem;
+  flex: 1;
 }
 
 .banner-text {
@@ -216,7 +217,6 @@ h4 {
 }
 
 .dashboard-statistics {
-  flex: 1;
   margin-left: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
