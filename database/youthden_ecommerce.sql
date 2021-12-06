@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2021 at 05:03 AM
+-- Generation Time: Dec 06, 2021 at 06:30 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -20,19 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `youthden_ecommerce`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_admin`
---
-
-CREATE TABLE `tbl_admin` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `full_name` varchar(255) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -93,17 +80,38 @@ INSERT INTO `tbl_products` (`id`, `product_name`, `product_price`, `description`
 (4, 'Too High', 650, 'Too High', '6198cf004d3357.87151959.png', 'No', 45),
 (5, 'Plants & Music', 500, 'Too High', '6198cf27b66551.49623927.png', 'Yes', 43),
 (6, 'Zimer', 750, 'Zimer', '61a05c950cec12.64504695.png', 'Yes', 50),
-(8, 'Placebo', 550, 'Placebo', '61a0f99c56ae03.94378719.png', '', 70);
+(8, 'Placebo', 550, 'Placebo', '61a0f99c56ae03.94378719.png', 'Yes', 70),
+(9, 'Vice', 650, 'Vice is limited edition', '61ae206ee4c9a7.52225897.png', 'No', 25),
+(11, 'Vinyl', 550, 'Vinyl', '61ae3f195e8d46.85787570.png', 'No', 155);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_staff`
+--
+
+CREATE TABLE `tbl_staff` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `role` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_staff`
+--
+
+INSERT INTO `tbl_staff` (`id`, `name`, `email`, `date`, `role`) VALUES
+(1, 'Mike Arvene Lantin', 'mikearvene.lantin@g.batstate-u.edu.ph', '2021-10-28', 'admin'),
+(2, 'Pauline Mae Ona', 'paulinemae.ona@g.batstate-u.edu.ph', '2021-10-28', 'admin'),
+(3, 'Kristia Isabelle Samson', 'kristiaisabelle.samson@g.batstate-u.edu.ph', '2021-11-26', 'admin'),
+(4, 'Shainne Amurao', 'shainne.amurao@g.batstate-u.edu.ph', '2021-11-26', 'admin'),
+(5, 'Jhun Gutierrez', 'jhun.gutierrez@g.batstate-u.edu.ph', '2021-11-30', 'admin');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `tbl_admin`
---
-ALTER TABLE `tbl_admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_customer`
@@ -124,14 +132,14 @@ ALTER TABLE `tbl_products`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `tbl_staff`
 --
+ALTER TABLE `tbl_staff`
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `tbl_admin`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
@@ -149,7 +157,13 @@ ALTER TABLE `tbl_orders`
 -- AUTO_INCREMENT for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tbl_staff`
+--
+ALTER TABLE `tbl_staff`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

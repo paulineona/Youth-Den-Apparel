@@ -9,7 +9,7 @@
     $result = $con->query($query);
 
     $data = $result->fetch_array();
-
+    
     if(isset($_POST['update'])) // when click on Update button
     {
         $productName = $_POST['product_name'];
@@ -30,40 +30,62 @@
             $fileActualExt = strtolower(end($fileExt)); // end() is an function to get the last piece of data in an array
             $allowed = array('jpg', 'jpeg', 'png'); // allowed extension
 
-            if (in_array($fileActualExt, $allowed)) { // if $fileActualExt is in $allowed array then proceed
-                $fileNewName = uniqid('', true).".".$fileActualExt; // we want to avoid file collision, the file new name will be a time format in microseconds
-                $fileDestination = 'images/'.$fileNewName;
-                
-                if (move_uploaded_file($fileTmpName, $fileDestination)) { // to upload the file from temporary location to final destination
+            if (empty($fileName) || $$fileName == "") {
+                echo "asdasdasd";
+                try {
                     $sql = "UPDATE `tbl_products` SET `product_name` = '$productName', `product_price` = '$productPrice',
-                                                    `description` = '$description', `img_name` = '$fileNewName', `featured` = '$featured',
-                                                    `stock` = '$stock' WHERE id='$id'";
-
+                            `description` = '$description', `featured` = '$featured',
+                            `stock` = '$stock' WHERE id='$id'";
+    
                     if ($con->query($sql) === true) { // to check if the insertion of data in database is successfull
                         echo "Records inserted successfully.";
                     } else {
                         unlink($fileDestination);
                         throw new Exception("ERROR: Could not able to execute $sql. " . $con->error);
                     }
-                } else {
-                    throw new Exception('Failed to upload image file');
+                } catch (Throwable $th) {
+                    $errorMessage = $th->getMessage();
+                    exit($errorMessage);
                 }
             } else {
-                throw new Exception('You cannot upload files of this type!');
+                echo "as2323d";
+
+                if (in_array($fileActualExt, $allowed)) { // if $fileActualExt is in $allowed array then proceed
+                    $fileNewName = uniqid('', true).".".$fileActualExt; // we want to avoid file collision, the file new name will be a time format in microseconds
+                    $fileDestination = 'images/'.$fileNewName;
+                    
+                    if (move_uploaded_file($fileTmpName, $fileDestination)) { // to upload the file from temporary location to final destination
+                        $sql = "UPDATE `tbl_products` SET `product_name` = '$productName', `product_price` = '$productPrice',
+                                                        `description` = '$description', `img_name` = '$fileNewName', `featured` = '$featured',
+                                                        `stock` = '$stock' WHERE id='$id'";
+    
+                        if ($con->query($sql) === true) { // to check if the insertion of data in database is successfull
+                            echo "Records inserted successfully.";
+                        } else {
+                            unlink($fileDestination);
+                            throw new Exception("ERROR: Could not able to execute $sql. " . $con->error);
+                        }
+                    } else {
+                        throw new Exception('Failed to upload image file');
+                    }
+                } else {
+                    throw new Exception('You cannot upload files of this type!');
+                }
             }
         } catch (Throwable $th) {
             $errorMessage = $th->getMessage();
             exit($errorMessage);
-        }	
+        }
+        
         closeCon($con);
-        header("location: dashboard/products.php"); // it will redirect to products.php
+        header("location: dashboard/products.php?updatesuccess"); // it will redirect to products.php
     }
 
 ?>
 
 <h3>Update Data</h3>
 
-<form method="POST" enctype="multipart/form-data"> <!--enctype="multipart/form-data is necessary to upload files in form -->
+<form method="POST" enctype="multipart/form-data">
     <label for="title">Product Name:</label><br>
     <input type="text" name="product_name" value="<?php echo $data['product_name'] ?>"><br>
     <label for="price">Price:</label><br>
@@ -75,6 +97,11 @@
     <label for="featured">Featured:</label><br>
     <input type="text" name="featured" value="<?php echo $data['featured'] ?>"><br>
     <label for="img">Image Name:</label><br>
-    <input type="file" name="img_name" value="<?php echo $data['img_name'] ?>"><br><br>
+    <input type="file" name="img_name" value="<?php echo $data['img_name'] ?>"><?php     
+        $img = "images/" . $data['img_name'];
+        echo "<img src=$img width=\"140\" height=\"140\">" .  $data['product_name']
+    ?>
+    <br>
+    <br>
     <button type="submit" name="update" value="Update">Update</button>
 </form>

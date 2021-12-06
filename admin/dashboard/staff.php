@@ -8,7 +8,7 @@
         $page = 1;
     }
 
-    $numPerPage = 4;
+    $numPerPage = 10;
     $startFrom = ($page - 1) * $numPerPage;
 
     
@@ -17,31 +17,26 @@
     if (!$dbSelected) {
         die("Can\'t use test_db : " . mysql_error());
     }
-    $query = "SELECT * FROM tbl_products LIMIT $startFrom, $numPerPage"; // LIMIT 0, 4 
+    $query = "SELECT * FROM tbl_staff LIMIT $startFrom, $numPerPage"; // LIMIT 0, 4 
     $result = $con->query($query);
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="assets/img/logo.png" type="icon" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    
-    <title>Products</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="icon" href="assets/img/logo.png" type="icon" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Our Staff</title>
 </head>
+
 <body id="body-pd">
-    
-   <!-- header -->
-   <header class="header" id="header">
+  <!-- header -->
+  <header class="header" id="header">
     <div class="header__toggle">
       <i class="bx bx-menu" id="header-toggle"></i>
     </div>
@@ -65,7 +60,7 @@
             <i class="bx bx-grid-alt nav__icon"></i>
             <span class="nav__name">Dashboard</span>
           </a>
-          <a href="products.php" class="nav__link active">
+          <a href="products.php" class="nav__link">
             <i class="bx bx-shopping-bag nav__icon"></i>
             <span class="nav__name">Products</span>
           </a>
@@ -80,7 +75,7 @@
             <span class="nav__name">Orders</span>
           </a>
 
-          <a href="staff.php" class="nav__link">
+          <a href="staff.php" class="nav__link active">
             <i class="bx bx-user-circle nav__icon"></i>
             <span class="nav__name">Our Staff</span>
           </a>
@@ -98,26 +93,27 @@
     </nav>
   </div>
 
-  <!-- products -->
+  <!-- staff-->
   <div class="container">
-    <h1>Products</h1>
-    <div class="products">
-      <div class="products-banner">
-        <div class="search-container">
-          <input class="search-input" type="text" onkeyup="searchFilter()" placeholder="Search by product name">
-        </div>
-        <div class="addProduct-container">
-          <button id="btn-add"><a href="" type="button">Add Product</a></button>
-        </div>
+    <h1>All Staff</h1>
+    <div class="staff-banner">
+      <div class="search-container">
+        <input class="search-input" type="text" onkeyup="searchFilter()" placeholder="Search by name/email">
       </div>
-      <div class="products-table table">
+      <div class="addStaff-container">
+        <button id="btn-add"><a href="" type="button">Add Staff</a></button>
+      </div>
+    </div>
+    <div class="staff">
+      <div class="staff-table table">
         <table>
           <thead>
             <tr>
               <th class="title">ID</th>
-              <th class="title">Product Name</th>
-              <th class="title">Price</th>
-              <th class="title">Stock</th>
+              <th class="title">Name</th>
+              <th class="title">Email</th>
+              <th class="title">Joining Date</th>
+              <th class="title">Role</th>
               <th class="title">Actions</th>
             </tr>
           </thead>
@@ -125,22 +121,44 @@
             <?php
               while ($row = $result->fetch_array()) { // fetch data in sql
                   echo "<tr>";
-                      $img = "../images/" . $row['img_name'];
                       echo "<td class=\"data\">" . $row['id'] . "</td>";
-                      echo "<td class=\"img-center\">" . "<img id=\"image\" src=$img>" . $row['product_name'] . "</td>";
-                      echo "<td class=\"data\"> Php. " . $row['product_price'] . ".00</td>";
-                      echo "<td class=\"data\">" . $row['stock'] . "</td>";
-                      echo "<td class=\"data\"><a href=\"../productsEdit.php?id=" . $row['id'] . "\"><img id=\"editBtn\" src=\"assets/img/edit.png\" alt=\"\"></a>
+                      echo "<td class=\"data\">" . $row['name'] . "</td>";
+                      echo "<td class=\"data\">" . $row['email'] . "</td>";
+                      echo "<td class=\"data\">" . $row['date'] . "</td>";
+                      echo "<td class=\"data\">" . $row['role'] . "</td>";
+                      echo "<td class=\"data\"><a href=\"#\"><img id=\"shopBtn\" src=\"assets/img/product.png\" alt=\"\"></a>
                               <a href=\"../productsDelete.php?id=" . $row['id'] . "\"><img id=\"deleteBtn\" src=\"assets/img/bin.png\" alt=\"\"></a></td>";
                   echo "</tr>\n";
               }
             ?>
+            <tr>
+              <!-- <td class="data">1</td>
+              <td class="data">Shainne Amurao</td>
+              <td class="data">shainne@example.com</td>
+              <td class="data">Nov. 18, 2021</td>
+              <td class="data">Admin</td>
+              <td class="data">
+                <a href="#"><img id="shopBtn" src="assets/img/product.png" alt=\\></a>
+                <a href="#"><img id="deleteBtn" src="assets/img/bin.png" alt=\\></a>
+              </td>
+            </tr>
+            <tr>
+              <td class="data">2</td>
+              <td class="data">Jhun Gutierrez</td>
+              <td class="data">jhun@example.com</td>
+              <td class="data">Nov. 18, 2021</td>
+              <td class="data">Admin</td>
+              <td class="data">
+                <a href="#"><img id="shopBtn" src="assets/img/product.png" alt=\\></a>
+                <a href="#"><img id="deleteBtn" src="assets/img/bin.png" alt=\\></a>
+              </td>
+            </tr> -->
           </tbody>
         </table>
       </div>
       <div class="page-container">
         <?php
-          $prQuery = "SELECT * FROM tbl_products"; 
+          $prQuery = "SELECT * FROM tbl_staff"; 
           $prResult = $con->query($prQuery);         
 
           $totalRecord = $prResult->num_rows; // total number of rows in database
@@ -148,15 +166,15 @@
 
           echo "<ul>";
             if ($page > 1) {
-                echo "<li><a href='../dashboard/products.php?page=".($page-1)."' class='btn-page prev'></a></li>";
+                echo "<li><a href='../dashboard/staff.php?page=".($page-1)."' class='btn-page prev'></a></li>";
             }
           
             for ($i=1; $i < $totalPage; $i++) { 
-                echo "<li><a href='../dashboard/products.php?page=".$i."'>$i</a></li>";
+                echo "<li><a href='../dashboard/staff.php?page=".$i."'>$i</a></li>";
             }
           
             if ($i > $page) {
-                echo "<li><a href='../dashboard/products.php?page=".($page+1)."' class='btn-page next'></a></li>";
+                echo "<li><a href='../dashboard/staff.php?page=".($page+1)."' class='btn-page next'></a></li>";
             }
           echo "</ul>";
         ?>
@@ -166,30 +184,34 @@
 
   <div id="modal">
     <img id="modal-close" src="assets/img/cancel.png" alt="">
-    <div id="addProduct-modal">
-      <h3>Add Products</h3>
-      <h4>Add your product and necessary information here</h4>
-      <form action="../productsAdd.php" method="POST" enctype="multipart/form-data"> <!--enctype="multipart/form-data is necessary to upload files in form -->
+    <div id="addStaff-modal">
+      <h3>Add Staff Member</h3>
+      <h4>Add your staff necessary information from here</h4>
+      <form action="../staffAdd.php" method="POST" enctype="multipart/form-data"> <!--enctype="multipart/form-data is necessary to upload files in form -->
         <div class="item">
-          <label for="img">Product Image</label>
+          <label for="img">Staff Image</label>
           <button class="img-input"><img id="img-input-display" src="assets/img/upload.png" alt="" onclick="click_the_button(files);">Drag your image here</button>
           <input id="insertFile" type="file" name="img_name">
         </div>
         <div class="item">
-          <label for="productName">Product Name</label>
-          <input id="productNameInput" type="text" name="product_name" placeholder="Product Name">
+          <label for="staffName">Staff Name</label>
+          <input id="staffNameInput" type="text" name="staff_name" placeholder="Staff Name">
         </div>
         <div class="item">
-          <label for="price">Price</label>
-          <input id="productPrice" type="text" name="product_price" placeholder="Price">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="Email">
         </div>
         <div class="item">
-          <label for="description">Description</label>
-          <textarea name="description" id="description" cols="30" rows="10" placeholder="Product Details"></textarea>
+          <label for="joiningDate">Joining Date</label>
+          <input id="joiningDate" type="date" name="joiningDate"> <!---- placeholder="JoiningDate" -->
         </div>
         <div class="item">
-          <label for="stock">Stock</label>
-          <input type="text" id="productQuantity"name="stock" placeholder="Product Quantity">
+          <label for="staffRole">Staff Role</label>
+          <select id="staffRole" name="role">
+            <option value="" disabled selected hidden>Staff role</option>
+            <option value="admin">Admin</option>
+            <option value="admin-assistant">Admin Assistant</option>
+          </select>
         </div>
         
         <button id="btn-submit" type="submit" name="submit" value="submit">Add Product</button>

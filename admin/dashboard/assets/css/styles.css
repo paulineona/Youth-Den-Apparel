@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 :root {
   --header-height: 3rem;
@@ -185,7 +185,7 @@ h4 {
 }
 
 .dashboard-banner {
-  width: 900px;
+  /* width: 900px; */
   border-radius: 33px;
   background-color: var(--white-color);  
   padding: 1rem;
@@ -233,7 +233,7 @@ h4 {
 .grid-item {
   background-color: var(--white-color);
   border-radius: 25px;
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 1.5rem 2rem 1rem;
   position: relative;
 }
 
@@ -308,25 +308,29 @@ h4 {
 
 .page-container .prev {
   background-image: url(../img/prev.png);
+  background-position: center;
 }
 
 .page-container .next {
+  background-position: center;
   background-image: url(../img/next.png);
 }
 
 .page-container li:hover .prev {
-  background-image: url(../img/prev-white.png) !important;
-  
+  border-radius: 5px;
+  border: 2px solid #95D1CC;
+  background-color: var(--body-color);
 }
 
 .page-container li:hover .next {
-  background-image: url(../img/next-white.png) !important;
-  
+  border-radius: 5px;
+  border: 2px solid #95D1CC;
+  background-color: var(--body-color);
 }
 
 /* MODAL  */
 
-.modal {
+#modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -342,15 +346,15 @@ h4 {
     opacity: 0.9;
 } */
 
-.modal.active {
+#modal.active {
   width: 40%;
 }
 
-.modal.active .body-pd {
+#modal.active .body-pd {
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
 }
 
-.modal-close {
+#modal-close {
   position: absolute;
   right: 0;
   width: 25px;
@@ -360,31 +364,31 @@ h4 {
   z-index: 101;
 }
 
-.addProduct-modal h3 {
+#addProduct-modal h3 {
   font-size: 2rem;
   margin-bottom: 0;
 }
 
-.addProduct-modal {
+#addProduct-modal, #addStaff-modal {
   padding: 50px 40px 150px;
   position: relative;
 }
 
-.addProduct-modal form {
+#addProduct-modal form, #addStaff-modal form {
   margin-top: 40px;
 }
 
-.addProduct-modal form .item {
+#addProduct-modal form .item, #addStaff-modal form .item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
 }
 
-.addProduct-modal form .item label {
+#addProduct-modal form .item label, #addStaff-modal form .item label {
   width: 180px;
 }
 
-.addProduct-modal form .item input {
+#addProduct-modal form .item input, #addStaff-modal form .item input, #staffRole {
   flex: 1;
   background-color: var(--body-color);
   border-radius: 10px;
@@ -393,7 +397,7 @@ h4 {
   border: none;
 }
 
-.addProduct-modal form .item textarea {
+#addProduct-modal form .item textarea {
   flex: 1;
   background-color: var(--body-color);
   border-radius: 10px;
@@ -401,7 +405,7 @@ h4 {
   border: none;
 }
 
-.addProduct-modal form .item .img-input {
+#addProduct-modal form .item .img-input, #addStaff-modal form .item .img-input {
   flex: 1;
   height: 160px;
   border: 1px dashed var(--black-color);
@@ -415,18 +419,23 @@ h4 {
   position: relative;
 }
 
-.addProduct-modal form .item #insertFile {
+#addProduct-modal form .item #insertFile, #addStaff-modal form .item #insertFile {
   position: absolute;
   right: 100px;
   display: none;
 }
 
-.addProduct-modal form .item .img-input img{
+#addProduct-modal form .item .img-input img, #addStaff-modal form .item .img-input img {
   width: 70px;
   height: 70px;
 }
 
-.addProduct-modal form #btn-submit {
+#addProduct-modal form .item #img-input-display.active, #addStaff-modal form .item #img-input-display.active {
+  width: 120px;
+  height: 120px;
+}
+
+#addProduct-modal form #btn-submit, #addStaff-modal form #btn-submit {
   position: absolute;
   bottom: 40px;
   right: 40px;
@@ -437,7 +446,7 @@ h4 {
   justify-content: center;
 }
 
-.addProduct-modal form #btn-submit::before {
+#addProduct-modal form #btn-submit::before, #addStaff-modal form #btn-submit::before {
   content: "";
   background-image: url(../img/plus.png);
   background-repeat: no-repeat;
@@ -447,8 +456,8 @@ h4 {
   height: 13px;
 }
 
-#insertFile, #productNameInput, #productPrice, #description, #productQuantity {
-  font-family: poppins;
+input {
+  font-family: var(--body-font);
 }
 
 @media screen and (min-width: 768px) {
@@ -588,7 +597,7 @@ img#image {
   background-repeat:no-repeat;
 }
 
-.btn-addStaff, #btn-submit, .btn-upProfile, .btn-addProduct{
+#btn-add, #btn-submit, .btn-upProfile{
   display: block;
   width: 230px;
   height: 50px;
@@ -600,16 +609,16 @@ img#image {
   cursor: pointer;
 }
 
-.btn-addStaff a, #btn-submit, .btn-upProfile a, .btn-addProduct a{
+#btn-add a, #btn-submit, .btn-upProfile a {
   text-decoration: none;
   color: var(--white-color);
 }
 
-.btn-addStaff:hover a, #btn-submit:hover, .btn-upProfile:hover a, .btn-addProduct:hover a{
+#btn-add:hover a, #btn-submit:hover, .btn-upProfile:hover a {
   color: var(--black-color);
 }
 
-.btn-addStaff:hover, #btn-submit:hover, .btn-upProfile:hover, .btn-addProduct:hover{
+#btn-add:hover, #btn-submit:hover, .btn-upProfile:hover {
   border: 2px solid black;
   background-color: var(--white-color);
 }
@@ -673,6 +682,15 @@ img#image {
   background-repeat:no-repeat;
 }
 
+#staffRole {
+  border: none;
+  color: var(--font-color);
+  background-image:url(../img/down-arrow.png);
+  background-position: 306px 50%;
+  background-size:20px;
+  background-repeat:no-repeat;
+}
+
 select {
   -webkit-appearance: none;
   appearance: none;
@@ -689,7 +707,7 @@ select {
 .btn-profileInput {
   display: inline-block;
   background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  border: 2px dashed #999;
+  border: 1px dashed var(--black-color);
   border-radius: 10px;
   width: 800px;
   height: 100px;

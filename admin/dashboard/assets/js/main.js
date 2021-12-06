@@ -26,13 +26,13 @@ function colorLink() {
 }
 linkColor.forEach((l) => l.addEventListener("click", colorLink));
 
-
 // MODAL
-const modal = document.getElementsByClassName("modal")[0];
-const closeModal = document.getElementsByClassName("modal-close")[0];
-const addProduct = document.getElementsByClassName("btn-addProduct")[0];
 
-addProduct.addEventListener("click", (event) => {
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("modal-close");
+const add = document.getElementById("btn-add");
+
+add.addEventListener("click", (event) => {
   event.preventDefault();
   modal.classList.add("active");
 });
