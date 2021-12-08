@@ -61,28 +61,35 @@
       </div>
       <div class="dashboard-statistics">
         <div class="grid-item">
-          <a href="">
+          <a href="sales.php">
             <p>Total Sales</p>
             <span class="stats">40 121</span>
             <img src="includes/assets/img/graph.png" alt="">
           </a>
         </div>
         <div class="grid-item">
-          <a href="">
+          <a href="order.php">
             <p>Total Order</p>
             <span class="stats">1367</span>
             <img src="includes/assets/img/order not active.png" alt="">
           </a>
         </div>
         <div class="grid-item">
-          <a href="">
+          <a href="products.php">
             <p>Total Product</p>
-            <span class="stats">400</span>
+            <?php
+              $prQuery = "SELECT * FROM tbl_products"; 
+              $prResult = $con->query($prQuery);         
+    
+              $totalRecord = $prResult->num_rows;
+
+              echo "<span class=\"stats\">$totalRecord</span>"
+            ?>
             <img src="includes/assets/img/product not active.png" alt="">
           </a>
         </div>
         <div class="grid-item">
-          <a href="">
+          <a href="customers.php">
             <p>Total User</p>
             <span class="stats">40</span>
             <img src="includes/assets/img/customer not active.png" alt="">
