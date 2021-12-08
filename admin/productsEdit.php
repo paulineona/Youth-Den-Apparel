@@ -83,25 +83,64 @@
 
 ?>
 
-<h3>Update Data</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<form method="POST" enctype="multipart/form-data">
-    <label for="title">Product Name:</label><br>
-    <input type="text" name="product_name" value="<?php echo $data['product_name'] ?>"><br>
-    <label for="price">Price:</label><br>
-    <input type="text" name="product_price" value="<?php echo $data['product_price'] ?>"><br>
-    <label for="description">Description:</label><br>
-    <input type="text" name="description" value="<?php echo $data['description'] ?>"><br>
-    <label for="stock">Stock:</label><br>
-    <input type="text" name="stock" value="<?php echo $data['stock'] ?>"><br>
-    <label for="featured">Featured:</label><br>
-    <input type="text" name="featured" value="<?php echo $data['featured'] ?>"><br>
-    <label for="img">Image Name:</label><br>
-    <input type="file" name="img_name" value="<?php echo $data['img_name'] ?>"><?php     
-        $img = "images/" . $data['img_name'];
-        echo "<img src=$img width=\"140\" height=\"140\">" .  $data['product_name']
-    ?>
-    <br>
-    <br>
-    <button type="submit" name="update" value="Update">Update</button>
-</form>
+    <link rel="icon" href="includes/assets/img/logo.png" type="icon" />
+
+    <link rel="stylesheet" href="includes/assets/css/resets.css" />
+    <link rel="stylesheet" href="includes/assets/css/headerSidebar.css" />
+    <link rel="stylesheet" href="includes/assets/css/modal.css" />
+    <link rel="stylesheet" href="includes/assets/css/modal.css" />
+    <title>Edit</title>
+</head>
+<body id="body-pd" style="background-color: var(--white-color);">
+
+  <?php include 'includes/header.php' ?>
+  <?php include 'includes/navBar.php' ?>
+  
+  <!-- form -->
+
+  <div id="modall">
+    <div id="update-modal">
+      <h3>Update Data</h3>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="item">
+            <label for="img">Product Image</label>
+            <?php $img = "images/" . $data['img_name']; ?>
+            <button class="img-input">
+                <?php echo "<img id=\"img-input-display\" class=\"active\" src=\"$img\" alt=\"\" onclick=\"click_the_button(files);\">" .  $data['product_name']?></button>
+            <input id="insertFile" type="file" name="img_name">
+        </div>
+        <div class="item">
+            <label for="productName">Product Name:</label><br>
+            <input id="productNameInput" type="text" name="product_name" value="<?php echo $data['product_name'] ?>">
+        </div>
+        <div class="item">
+            <label for="price">Price:</label><br>
+            <input id="productPrice" type="text" name="product_price" value="<?php echo $data['product_price'] ?>">
+        </div>
+        <div class="item">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
+        </div>
+        <div class="item">
+            <label for="stock">Stock</label>
+            <input type="text" id="productQuantity" name="stock" value="<?php echo $data['stock'] ?>">
+        </div>
+        
+        <button id="btn-submit" type="submit" name="update" value="Update">Update</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="includes/assets/js/main.js"></script>
+
+</body>
+</html>
+
+

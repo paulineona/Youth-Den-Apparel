@@ -47,6 +47,6 @@
             exit($errorMessage);
         }
         closeCon($con);
-        header("location: dashboard/staff.php?uploadsuccess"); // it will display in url
+        header("location: staff.php?uploadsuccess"); // it will display in url
     } 
 ?>

@@ -1,6 +1,6 @@
 function searchFilter() {
   // Declare variables
-  var input, filter, productsTable, tr, td, i, txtValue;
+  var input, filter, table, tr, td, i, txtValue;
   input = document.getElementsByClassName("search-input")[0];
   filter = input.value.toUpperCase();
   table = document.getElementsByClassName("table")[0];

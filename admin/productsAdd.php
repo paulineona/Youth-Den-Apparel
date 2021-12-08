@@ -48,6 +48,6 @@
             exit($errorMessage);
         }
         closeCon($con);
-        header("location: dashboard/products.php?uploadsuccess"); // it will display in url
+        header("location: products.php?uploadsuccess"); // it will display in url
     } 
 ?>

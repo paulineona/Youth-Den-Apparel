@@ -26,21 +26,6 @@ function colorLink() {
 }
 linkColor.forEach((l) => l.addEventListener("click", colorLink));
 
-// MODAL
-
-const modal = document.getElementById("modal");
-const closeModal = document.getElementById("modal-close");
-const add = document.getElementById("btn-add");
-
-add.addEventListener("click", (event) => {
-  event.preventDefault();
-  modal.classList.add("active");
-});
-
-closeModal.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
-
 // IMAGE UPLOAD 
 const imgInput = document.getElementsByClassName("img-input")[0];
 const inputFile = document.getElementById("insertFile");
