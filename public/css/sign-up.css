@@ -507,6 +507,7 @@ footer .all-rights {
   font-size: 18px;
   cursor: pointer;
   margin-top: 30px;
+  color: #FFFFFF;
 }
 .signUp .form .btns .btn-signUp a, .signUp .form .btns .btn-logIn a, .logIn .form .btns .btn-signUp a, .logIn .form .btns .btn-logIn a {
   text-decoration: none;
@@ -516,6 +517,9 @@ footer .all-rights {
   background-color: #FFFFFF;
 }
 .signUp .form .btns .btn-signUp:hover a, .signUp .form .btns .btn-logIn:hover a, .logIn .form .btns .btn-signUp:hover a, .logIn .form .btns .btn-logIn:hover a {
+  color: #000000;
+}
+.signUp .form .btns .btn-signUp:hover, .signUp .form .btns .btn-logIn:hover, .logIn .form .btns .btn-signUp:hover, .logIn .form .btns .btn-logIn:hover {
   color: #000000;
 }
 .signUp .form .btns p, .logIn .form .btns p {

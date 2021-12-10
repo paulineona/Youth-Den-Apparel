@@ -1,3 +1,10 @@
+<?php 
+    include 'includes/connection.php'; 
+
+    $con = openCon();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,30 +65,30 @@
         <div class="container">
             <h1 class="title">Create An Account</h1>
             <hr class="line">
-            <form class="form" action="">
+            <form class="form" action="register.php" method="POST">
                 <div class="top">
                     <div class="left">
                         <label for="fname">First Name</label><br>
-                        <input type="text" name="fname" id="fname"><br>
+                        <input type="text" name="fname" id="fname" required><br>
                     </div>
                     <div class="right">
-                        <label for="fname">Last Name</label><br>
-                        <input type="text" name="fname" id="fname"><br>
+                        <label for="lname">Last Name</label><br>
+                        <input type="text" name="lname" id="lname" required><br>
                     </div>
                 </div>
                 <div class="bottom">
                     <div class="left">
                         <label for="email">Email</label><br>
-                        <input type="email" name="email" id="email"><br>
+                        <input type="email" name="email" id="email" required><br>
                     </div>
                     <div class="right">
                         <label for="password">Password</label><br>
-                        <input type="password" name="password" id="password"><br>
+                        <input type="password" name="password" id="password" required><br>
                     </div>
                 </div>
                 <div class="btns">
                     <div class="left">
-                        <button class="btn-signUp"><a href="">Sign Up</a></button> 
+                        <button class="btn-signUp" type="submit" name="sign-up" value="sign-up">Sign Up</button> 
                     </div>
                     <div class="right">
                         <p>Returning Customer?<a href="login.php" class="login">Login</a></p>
@@ -91,7 +98,11 @@
         </div>
     </section>
 
-    <?php include 'footer.php' ?>
+    <?php
+        closeCon($con); // close connection
+    ?>
+
+    <?php include 'includes/footer.php' ?>
 
     <script src="public/js/hamburger.js"></script>
 

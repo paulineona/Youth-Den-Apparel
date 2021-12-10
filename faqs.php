@@ -166,7 +166,7 @@
         </div>
     </section>
 
-    <?php include 'footer.php' ?>
+    <?php include 'includes/footer.php' ?>
 
     <script src="public/js/hamburger.js"></script>
     <script src="public/js/span-youthden.js"></script>

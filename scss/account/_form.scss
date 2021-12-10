@@ -32,6 +32,11 @@
             .btn-signUp, .btn-logIn {
                 @include btn(350px, 50px);
                 margin-top: 30px;
+                color: $white;
+            }
+
+            .btn-signUp:hover, .btn-logIn:hover {
+                color: $black;
             }
     
             p {

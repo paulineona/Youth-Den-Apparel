@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
 
-    <link rel="icon" type="image/png" href="../images/logo/logo-arvene-ver.png">
+    <link rel="icon" type="image/png" href="public/images/logo/logo-arvene-ver.png">
     <link rel="stylesheet" href="public/css/log-in.css">
 </head>
 <body>
@@ -58,20 +58,20 @@
         <div class="container">
             <h1 class="title">Login</h1>
             <hr class="line">
-            <form class="form" action="">
+            <form class="form" action="verify.php" method="POST">
                 <div class="top">
                     <div class="left">
                         <label for="email">Email</label><br>
-                        <input type="email" name="email" id="email"><br>
+                        <input type="email" name="email" id="email" required><br>
                     </div>
                     <div class="right">
                         <label for="password">Password</label><br>
-                        <input type="password" name="password" id="password"><br>
+                        <input type="password" name="password" id="password" required><br>
                     </div>
                 </div>
                 <div class="btns">
                     <div class="left">
-                        <button class="btn-logIn"><a href="">Login</a></button> 
+                        <button class="btn-logIn" type="submit" name="login" value="login">Login</button> 
                     </div>
                     <div class="right">
                         <p>New Customer?<a href="sign-up.php" class="sign-up">Sign up</a></p>
@@ -81,7 +81,7 @@
         </div>
     </section>
 
-    <?php include 'footer.php' ?>
+    <?php include 'includes/footer.php' ?>
 
     <script src="public/js/hamburger.js"></script>
     
