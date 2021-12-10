@@ -18,7 +18,7 @@ h1 {
 }
 
 h2, h3 {
-    font-size: 28px;
+    font-size: 27px;
     text-transform: uppercase;
 }
 
@@ -26,16 +26,20 @@ p {
     font-size: $font-p;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     max-width: 400px;
     @media only screen and (min-width: $laptopS) {
         max-width: 1000px;
         h1 {
-            font-size: 76px !important;
+            font-size: 66px !important;
         }
         
         h2 {
-            font-size: 57px !important;
+            font-size: 47px !important;
         }
     }
     @media only screen and (min-width: $laptopL) {

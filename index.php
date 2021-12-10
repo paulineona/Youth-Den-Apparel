@@ -162,25 +162,11 @@
             <div class="right">
                 <img src="public/images/pics/aboutus1.png" alt="">
                 <div class="read">
-                    <h2>FORMED IN PLAYGROUND.
-                        CLUSTERED IN GROUPS. SHARED COMMON INTERESTS
-                    </h2>
-                    <p>Welcome to Youth Den Apparel, your number one source for all things product like shirts.
-                    We're dedicated to giving you the very best of Youth Den, with a 
-                    focus on three characteristics of good quality of products, customer service and uniqueness </p>
-                    <br>
-                    <p>
-                        A blend of youthful energy and stance, Youth Den is a Unisex streetwear launched in 2021. A proudly Filipino clothing brand providing you comfortable outfits for your every day.
-                        Youth Den is focused on making a dynamic, cheerful, comfy lifestyle of passion and making a creative eco-style and minimalistic design.  #OOTD! </p> <br>
-                    <p>
-                        Founded in 2021 by Youth Den squad which is a group of college friends, Youth Den has come a long way from its beginnings in a starting location in Lipa City, Malvar Batangas. 
-                        We aim to offer our customers a variety of the latest Youth Den T-shirt design. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget-friendly products. 
-                        We offer all of this while providing excellent customer service and friendly support. 
-                        We believe passionately in great bargains and excellent service, which is why we commit ourselves to giving you the best of both. 
-                        If you’re looking for something new, you’re in the right place. We strive to be industrious and innovative, offering our customers something they want, putting their desires at the top of our priority list.
-                    </p>
+                    <h2>YOUTH DEN.</h2>
+                    <p>Youth Den is an independent, street fashion brand founded in 2021, inspired by urban space. We create simple and clear things, 
+                    paying close attention to details and using innovative materials, combining modern and traditional styles.</p>
                 </div>
-                <button class="btn-read">read</button>
+                <button class="btn-read"><a href="about.php">read</button>
             </div>
         </div>
     </section>

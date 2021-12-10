@@ -27,12 +27,16 @@ h1 {
 }
 
 h2, h3 {
-  font-size: 28px;
+  font-size: 27px;
   text-transform: uppercase;
 }
 
 p {
   font-size: 18px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .container {
@@ -44,10 +48,10 @@ p {
     max-width: 1000px;
   }
   .container h1 {
-    font-size: 76px !important;
+    font-size: 66px !important;
   }
   .container h2 {
-    font-size: 57px !important;
+    font-size: 47px !important;
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -358,7 +362,7 @@ header .hero .bottom .explore .btn-explore:hover {
 @media only screen and (min-width: 1024px) {
   header .hero .heading {
     padding: 80px 0;
-    width: 600px;
+    width: 800px;
   }
   header .hero .bottom {
     padding-top: 80px;
@@ -439,6 +443,9 @@ header .hero .bottom .explore .btn-explore:hover {
 .about-us .right .btn-read:hover::after {
   -webkit-animation: readHover 0.8s 4 alternate;
           animation: readHover 0.8s 4 alternate;
+}
+.about-us .right .btn-read a {
+  color: #000000;
 }
 
 @media only screen and (min-width: 1024px) {

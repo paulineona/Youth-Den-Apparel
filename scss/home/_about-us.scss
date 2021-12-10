@@ -69,6 +69,10 @@
             &:hover::after {
                 animation: readHover 0.8s 4 alternate;
             }
+            
+            a {
+                color: $black;
+            }
         }
     }
 }

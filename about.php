@@ -60,8 +60,7 @@
             <div class="hero reverse">
                 <div class="intro">
                     <div class="heading">
-                        <h1>FORMED IN PLAYGROUND.
-                        CLUSTERED IN GROUPS. SHARED COMMON INTERESTS </h1>
+                        <h2>FORMED IN PLAYGROUND. CLUSTERED IN GROUPS. SHARED COMMON INTERESTS </h2>
                     </div>
                     <div class="bottom">
                         <p>Welcome to Youth Den Apparel, your number one source for all things product like shirts.
