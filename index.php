@@ -58,11 +58,12 @@
         <section class="hero">
             <div class="container">
                 <div class="heading">
-                    <h1>Lorem ipsum Lorem ipsum Lorem ipsum </h1>
+                    <h1>YOUTH DESIGNS MADE BY YOUTHS FOR REAL YOUTHS </h1>
                 </div>
                 <div class="bottom">
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, quisquam!</p>
+                    <h2>WINTER 2021</h2>
+                    <p>Designed and created using extraordinary technology and the best trends of street 
+                        fashion of the 20th century. A colection for the young, stylish and brave.</p>
                     <div class="explore">
                         <button class="btn-explore">Explore</button>
                     </div>
@@ -153,15 +154,31 @@
         <h2 class="heading">about us</h2>
         <div class="container">
             <div class="left">
-                <h2>Lorem ipsum</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni suscipit alias eligendi molestias aliquid totam, repellendus accusamus quia numquam obcaecati, laboriosam corporis sequi nulla quisquam corrupti, harum ad doloribus!</p>
+                <h2>YOUTH DEN.</h2>
+                <p>Youth Den is an independent, street fashion brand founded in 2021, inspired by urban space. We create simple and clear things, 
+                    paying close attention to details and using innovative materials, combining modern and traditional styles.</p>
                 <img src="public/images/pics/aboutus2.jpg" alt="">
             </div>
             <div class="right">
                 <img src="public/images/pics/aboutus1.png" alt="">
                 <div class="read">
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus magni suscipit alias eligendi molestias aliquid totam, repellendus accusamus quia numquam obcaecati, laboriosam corporis sequi nulla quisquam corrupti, harum ad doloribus!</p>
+                    <h2>FORMED IN PLAYGROUND.
+                        CLUSTERED IN GROUPS. SHARED COMMON INTERESTS
+                    </h2>
+                    <p>Welcome to Youth Den Apparel, your number one source for all things product like shirts.
+                    We're dedicated to giving you the very best of Youth Den, with a 
+                    focus on three characteristics of good quality of products, customer service and uniqueness </p>
+                    <br>
+                    <p>
+                        A blend of youthful energy and stance, Youth Den is a Unisex streetwear launched in 2021. A proudly Filipino clothing brand providing you comfortable outfits for your every day.
+                        Youth Den is focused on making a dynamic, cheerful, comfy lifestyle of passion and making a creative eco-style and minimalistic design.  #OOTD! </p> <br>
+                    <p>
+                        Founded in 2021 by Youth Den squad which is a group of college friends, Youth Den has come a long way from its beginnings in a starting location in Lipa City, Malvar Batangas. 
+                        We aim to offer our customers a variety of the latest Youth Den T-shirt design. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget-friendly products. 
+                        We offer all of this while providing excellent customer service and friendly support. 
+                        We believe passionately in great bargains and excellent service, which is why we commit ourselves to giving you the best of both. 
+                        If you’re looking for something new, you’re in the right place. We strive to be industrious and innovative, offering our customers something they want, putting their desires at the top of our priority list.
+                    </p>
                 </div>
                 <button class="btn-read">read</button>
             </div>
@@ -181,7 +198,7 @@
                 <img src="public/images/pics/pic3.jpg" alt="">
             </div>
             <div class="span2">
-                <p>"Nulla placerat aliquam felis, id mattis quam varius nec. Pellentesque a augue quis enim rhoncus tincidunt. Suspendisse justo nisl, imperdiet eget lacinia id, elementum sed dolor. "</p>
+                <p>"Seeks to shift the current landscape of fashion, while operating under a personal philosophy of giving the youth more than what they pay for."</p>
             </div>
             <div class="pic">
                 <img src="public/images/pics/pic4.jpg" alt="">
@@ -218,7 +235,7 @@
             <div class="footer">
                 <div class="newsletter">
                     <h3>newsletter</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, aliquid!</p>
+                    <p>Subscribe To Our Newsletter To Receive Our News</p>
                     <div class="email">
                         <input type="email" name="email" id="" placeholder="Your email address">
                         <a href="">subscribe</a>

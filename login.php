@@ -87,7 +87,7 @@
             <div class="footer">
                 <div class="newsletter">
                     <h3>newsletter</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, aliquid!</p>
+                    <p>Subscribe To Our Newsletter To Receive Our News</p>
                     <div class="email">
                         <input type="email" name="email" id="" placeholder="Your email address">
                         <a href="">subscribe</a>
