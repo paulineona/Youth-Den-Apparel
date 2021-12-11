@@ -12,11 +12,10 @@
     
     if(isset($_POST['update'])) // when click on Update button
     {
-        $productName = $_POST['product_name'];
+        $productName = $con->real_escape_string($_POST['product_name']);
         $productPrice = $_POST['product_price'];
-        $description = $_POST['description'];
+        $description = $con->real_escape_string($_POST['description']);
         $stock = $_POST['stock'];
-        $featured = $_POST['featured'];
         $file = $_FILES['img_name']; // _FILES get all information from the files that we want to upload using an input from a form
 
         try {
@@ -34,13 +33,11 @@
                 echo "asdasdasd";
                 try {
                     $sql = "UPDATE `tbl_products` SET `product_name` = '$productName', `product_price` = '$productPrice',
-                            `description` = '$description', `featured` = '$featured',
-                            `stock` = '$stock' WHERE id='$id'";
+                            `description` = '$description', `stock` = '$stock' WHERE id='$id'";
     
                     if ($con->query($sql) === true) { // to check if the insertion of data in database is successfull
                         echo "Records inserted successfully.";
                     } else {
-                        unlink($fileDestination);
                         throw new Exception("ERROR: Could not able to execute $sql. " . $con->error);
                     }
                 } catch (Throwable $th) {
@@ -56,8 +53,7 @@
                     
                     if (move_uploaded_file($fileTmpName, $fileDestination)) { // to upload the file from temporary location to final destination
                         $sql = "UPDATE `tbl_products` SET `product_name` = '$productName', `product_price` = '$productPrice',
-                                                        `description` = '$description', `img_name` = '$fileNewName', `featured` = '$featured',
-                                                        `stock` = '$stock' WHERE id='$id'";
+                                                        `description` = '$description', `img_name` = '$fileNewName', `stock` = '$stock' WHERE id='$id'";
     
                         if ($con->query($sql) === true) { // to check if the insertion of data in database is successfull
                             echo "Records inserted successfully.";
@@ -78,7 +74,7 @@
         }
         
         closeCon($con);
-        header("location: dashboard/products.php?updatesuccess"); // it will redirect to products.php
+        header("location: products.php?updatesuccess"); // it will redirect to products.php
     }
 
 ?>
@@ -142,5 +138,4 @@
 
 </body>
 </html>
-
 

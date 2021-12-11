@@ -5,11 +5,10 @@
     $con = openCon();
 
     if (isset($_POST['submit'])) { // this means that if the user clicked the submit bottom it will run the code
-        $productName = $_POST['product_name'];
+        $productName = $con->real_escape_string($_POST['product_name']);
         $productPrice = $_POST['product_price'];
-        $description = $_POST['description'];
+        $description = $con->real_escape_string($_POST['description']);
         $stock = $_POST['stock'];
-        $featured = $_POST['featured'];
         $file = $_FILES['img_name']; // _FILES get all information from the files that we want to upload using an input from a form
 
         try {
@@ -28,8 +27,8 @@
                 $fileDestination = 'images/'.$fileNewName;
                 
                 if (move_uploaded_file($fileTmpName, $fileDestination)) { // to upload the file from temporary location to final destination
-                    $sql = "INSERT INTO `tbl_products`(`id`, `product_name`, `product_price`, `description`, `img_name`, `featured`, `stock`)
-                                    VALUES ('NULL','$productName','$productPrice','$description','$fileNewName','$featured','$stock')";
+                    $sql = "INSERT INTO `tbl_products`(`id`, `product_name`, `product_price`, `description`, `img_name`, `stock`)
+                                    VALUES ('NULL','$productName','$productPrice','$description','$fileNewName','$stock')";
 
                     if ($con->query($sql) === true) { // to check if the insertion of data in database is successfull
                         echo "Records inserted successfully.";
