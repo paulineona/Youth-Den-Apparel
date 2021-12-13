@@ -503,19 +503,18 @@ footer .all-rights {
 }
 
 #title {
-  padding-top: 10px;
   font-size: 57px;
   text-transform: uppercase;
 }
 
 #subtitle {
   font-size: 30px;
-  padding-top: 5px;
+  padding-top: 2px;
   text-decoration: underline;
 }
 
 .cards {
-  margin-top: 20px;
+  margin-top: 5px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
