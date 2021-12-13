@@ -73,7 +73,6 @@
               <tr>
                 <th colspan="2">Your order</th>
               </tr>
-
               <tr>
                 <td id="total">Total</td>
                 <td id="price">PHP 1300.00</td>
