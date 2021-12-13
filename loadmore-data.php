@@ -24,3 +24,7 @@
         }
     }
 ?>
+
+<?php
+    closeCon($con); // close connection
+?>

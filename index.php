@@ -1,3 +1,15 @@
+<?php 
+
+    include 'includes/connection.php'; 
+
+    $con = openCon(); // open connection
+    $dbSelected = $con->select_db('youthden_ecommerce'); // select database
+    if (!$dbSelected) {
+        die("Can\'t use test_db : " . mysql_error());
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +39,7 @@
                                 <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">shop</a>
+                                <a class="nav-link" href="catalog.php">shop</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.php">about</a>
@@ -80,62 +92,30 @@
                 <button class="btn-explore2">Explore & Shop</button>
             </div>
             <div class="carousel">
-                <div class="slides item1">
-                    <img src="public/images/shirts/shirt front only/wastedyouth_white.png" alt="">
-                    <div class="details">
-                        <p class="item-title">wasted youth</p>
-                        <p class="price">PHP 500.00</p> 
-                    </div>
-                </div>
-                <div class="slides item2">
-                    <img src="public/images/shirts/shirt with back/refresh_back.png" alt="">
-                    <div class="details">
-                        <p class="item-title">refresh</p>
-                        <p class="price">PHP 600.00</p>
-                    </div>
-                </div>
-                <div class="slides item3">
-                    <img src="public/images/shirts/long sleeves/1988_BACK.png" alt="">
-                    <div class="details">
-                        <p class="item-title">l'astronomie 1988</p>
-                        <p class="price">PHP 750.00</p>
-                    </div>
-                </div>
-                <div class="slides item4">
-                    <img src="public/images/shirts/shirt front only/hightimes.png" alt="">
-                    <div class="details">
-                        <p class="item-title">hightimes</p>
-                        <p class="price">PHP 450.00</p>
-                    </div>
-                </div>
-                <div class="slides item5">
-                    <img src="public/images/shirts/shirt front only/wastedyouth_white.png" alt="">
-                    <div class="details">
-                        <p class="item-title">wasted youth</p>
-                        <p class="price">PHP 500.00</p> 
-                    </div>
-                </div>
-                <div class="slides item6">
-                    <img src="public/images/shirts/shirt with back/refresh_back.png" alt="">
-                    <div class="details">
-                        <p class="item-title">refresh</p>
-                        <p class="price">PHP 600.00</p>
-                    </div>
-                </div>
-                <div class="slides item7">
-                    <img src="public/images/shirts/long sleeves/1988_BACK.png" alt="">
-                    <div class="details">
-                        <p class="item-title">l'astronomie 1988</p>
-                        <p class="price">PHP 750.00</p>
-                    </div>
-                </div>
-                <div class="slides item8">
-                    <img src="public/images/shirts/shirt front only/hightimes.png" alt="">
-                    <div class="details">
-                        <p class="item-title">hightimes</p>
-                        <p class="price">PHP 450.00</p>
-                    </div>
-                </div>
+                <?php
+                    $count_query = "SELECT count(*) FROM tbl_products";
+                    $count_result = $con->query($count_query);
+                    $count_fetch = mysqli_fetch_array($count_result);
+                    $postCount = $count_fetch;
+                    $limit = 8;
+
+                    $query = "SELECT * FROM `tbl_products` ORDER BY `id` ASC LIMIT 0, " . $limit;  
+                    $result = $con->query($query);
+
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_array()){ 
+                            echo "<div class=\"slides item1\">";
+                                $img = "admin/images/" . $row['img_name'];
+                                echo "<img src=$img alt=\"\" class=\"card__image\" />";
+                                echo "<div class=\"details\">";
+                                    echo "<p class=\"item-title\">" . $row['product_name'] . "</p>";
+                                    echo "<p class=\"price\">Php. " . $row['product_price'] . ".00</p>";
+                                echo "</div>";
+                            echo "</div>";
+                        }
+                    }
+
+                ?>
                 
                 <div class="next-prev">
                     <a class="prev" onclick="plusSlides(-1)">
@@ -216,6 +196,10 @@
     </section>
 
     <?php include 'includes/footer.php' ?>
+
+    <?php
+        closeCon($con); // close connection
+    ?>
 
     <script src="public/js/app.js"></script>
     <script src="public/js/hamburger.js"></script>

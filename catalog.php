@@ -110,7 +110,11 @@
         </div>
     </section>
 
-        <?php include 'includes/footer.php' ?>
+    <?php include 'includes/footer.php' ?>
+
+    <?php
+        closeCon($con); // close connection
+    ?>
 
     <script src="public/js/hamburger.js"></script>
 
