@@ -8,7 +8,7 @@
     <title>Shop</title>
 
     <link rel="icon" type="image/png" href="public/images/logo/logo-arvene-ver.png" />
-    <link rel="stylesheet" href="public/css/catalog.css" />
+    <link rel="stylesheet" href="./public/css/catalog.css" />
 </head>
 
 <body>
@@ -56,71 +56,58 @@
         </nav>
     </header>
 
-    <!-- CATALOG-->
-    <section class="shop">
-        <div class="container">
-            <div id="title">Shop</div>
-            <div id="subtitle">t-shirts</div>
-            <div class="cards">
-                <div class="card">
-                    <img src="public/images/shirts/shirt front only/plantsmusic.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">PLANTS LIKE MUSIC TOO</p>
-                        <p class="price">PHP 450.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
+
+
+    < <!-- CATALOG-->
+        <section class="shop">
+            <div class="container">
+                <div id="title">Shop</div>
+                <div id="subtitle">t-shirts</div>
+                <div class="cards">
+                    <?php
+                    include 'includes/connection.php';
+
+                    $con = openCon();
+                    $query = "SELECT * FROM tbl_products LIMIT 6";
+                    $query_run = mysqli_query($con, $query);
+                    $check_product = mysqli_num_rows($query_run) > 0;
+
+
+                    if ($check_product) {
+                        while ($row = mysqli_fetch_assoc($query_run)) {
+                    ?>
+
+                    <div class="card">
+                        <img src="admin/images/<?php echo $row['img_name'];
+                                                        ?>" alt="Product Images" class="card__image" />
+                        <div class="card__content">
+                            <p class="name"><?php echo $row['product_name']; ?></p>
+                            <p class="price">PHP <?php echo $row['product_price']; ?>.00</p>
+                            <button class="addtocart"><a href="">Add to cart</a></button>
+                        </div>
                     </div>
+
+                    <?php
+                        }
+                    } else {
+                        echo "No product Found";
+                    }
+                    ?>
                 </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt front only/wastedyouth_white.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">wasted youth</p>
-                        <p class="price">PHP 450.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt with back/nofear_back.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">no fear</p>
-                        <p class="price">PHP 600.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt with back/outdoorclub_cream_back.png" alt=""
-                        class="card__image" />
-                    <div class="card__content">
-                        <p class="name">outdoor club</p>
-                        <p class="price">PHP 550.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt front only/dance.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">let's dance</p>
-                        <p class="price">PHP 450.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt with back/refresh_back.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">refresh</p>
-                        <p class="price">PHP 700.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
+                <div class="shop">
+                    <button class="btn-shop"><a href="">load more</a></button>
                 </div>
             </div>
-            <div class="shop">
-                <button class="btn-shop"><a href="">load more</a></button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <?php include 'includes/footer.php' ?>
+        <?php include 'includes/footer.php' ?>
 
-    <script src="public/js/hamburger.js"></script>
+        <?php
+        closeCon($con);
+        ?>
+
+
+        <script src="public/js/hamburger.js"></script>
 </body>
 
 </html>
