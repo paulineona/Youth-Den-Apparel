@@ -1,3 +1,15 @@
+<?php 
+
+    include 'includes/connection.php'; 
+
+    $con = openCon(); // open connection
+    $dbSelected = $con->select_db('youthden_ecommerce'); // select database
+    if (!$dbSelected) {
+        die("Can\'t use test_db : " . mysql_error());
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +21,8 @@
 
     <link rel="icon" type="image/png" href="public/images/logo/logo-arvene-ver.png" />
     <link rel="stylesheet" href="public/css/catalog.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -62,58 +76,36 @@
             <div id="title">Shop</div>
             <div id="subtitle">t-shirts</div>
             <div class="cards">
-                <div class="card">
-                    <img src="public/images/shirts/shirt front only/plantsmusic.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">PLANTS LIKE MUSIC TOO</p>
-                        <p class="price">PHP 450.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt front only/wastedyouth_white.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">wasted youth</p>
-                        <p class="price">PHP 450.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt with back/nofear_back.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">no fear</p>
-                        <p class="price">PHP 600.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt with back/outdoorclub_cream_back.png" alt=""
-                        class="card__image" />
-                    <div class="card__content">
-                        <p class="name">outdoor club</p>
-                        <p class="price">PHP 550.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt front only/dance.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">let's dance</p>
-                        <p class="price">PHP 450.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="public/images/shirts/shirt with back/refresh_back.png" alt="" class="card__image" />
-                    <div class="card__content">
-                        <p class="name">refresh</p>
-                        <p class="price">PHP 700.00</p>
-                        <button class="addtocart"><a href="">add to cart</a></button>
-                    </div>
-                </div>
+            <?php
+                $count_query = "SELECT count(*) FROM tbl_products";
+                $count_result = $con->query($count_query);
+                $count_fetch = mysqli_fetch_array($count_result);
+                $postCount = $count_fetch;
+                $limit = 6;
+    
+                $query = "SELECT * FROM `tbl_products` ORDER BY `id` ASC LIMIT 0, " . $limit;  
+                $result = $con->query($query);
+            
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_array()){ 
+                        echo "<div class=\"card\">";
+                            $img = "admin/images/" . $row['img_name'];
+                            echo "<img src=$img alt=\"\" class=\"card__image\" />";
+                            echo "<div class=\"card__content\">";
+                                echo "<p class=\"name\">" . $row['product_name'] . "</p>";
+                                echo "<p class=\"price\">Php. " . $row['product_price'] . ".00</p>";
+                                echo "<button class=\"addtocart\"><a href=\"cart.php\">add to cart</a></button>";
+                            echo "</div>";
+                        echo "</div>";
+                    }
+                }
+
+            ?>
             </div>
             <div class="shop">
-                <button class="btn-shop"><a href="">load more</a></button>
+                <input type="button" class="btn-shop" id="loadBtn" value="Load More">
+                <input type="hidden" id="row" value="0">
+                <input type="hidden" id="postCount" value="<?php echo $postCount; ?>">
             </div>
         </div>
     </section>
@@ -121,6 +113,35 @@
     <?php include 'includes/footer.php' ?>
 
     <script src="public/js/hamburger.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(document).on('click', '#loadBtn', function () {
+          var row = Number($('#row').val());
+          var count = Number($('#postCount').val());
+          var limit = 6;
+          row = row + limit;
+          $('#row').val(row);
+          $("#loadBtn").val('Loading...');
+        
+          $.ajax({
+            type: 'POST',
+            url: 'loadmore-data.php',
+            data: 'row=' + row,
+            success: function (data) {
+              var rowCount = row + limit;
+              $('.cards').append(data);
+              if (rowCount >= count) {
+                $('#loadBtn').css("display", "none");
+              } else {
+                $("#loadBtn").val('Load More');
+              }
+            }
+          });
+        });
+      });
+    </script>
+
 </body>
 
 </html>

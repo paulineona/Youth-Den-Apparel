@@ -548,18 +548,11 @@ footer .all-rights {
   text-transform: uppercase;
   font-size: 18px;
   cursor: pointer;
-}
-
-.shop .btn-shop a {
-  text-decoration: none;
   color: #ffffff;
 }
 
 .shop .btn-shop:hover {
   background-color: #ffffff;
-}
-
-.shop .btn-shop:hover a {
   color: #000000;
 }
 
