@@ -77,10 +77,10 @@
             <div id="subtitle">t-shirts</div>
             <div class="cards">
             <?php
-                $count_query = "SELECT count(*) FROM tbl_products";
+                $count_query = "SELECT count(*) as allcount FROM tbl_products";
                 $count_result = $con->query($count_query);
                 $count_fetch = mysqli_fetch_array($count_result);
-                $postCount = $count_fetch;
+                $postCount = $count_fetch['allcount'];
                 $limit = 6;
     
                 $query = "SELECT * FROM `tbl_products` ORDER BY `id` ASC LIMIT 0, " . $limit;  
@@ -134,9 +134,12 @@
             data: 'row=' + row,
             success: function (data) {
               var rowCount = row + limit;
+              console.log(rowCount);
+                console.log(count);
               $('.cards').append(data);
               if (rowCount >= count) {
                 $('#loadBtn').css("display", "none");
+                $('.btn-shop').css("display", "none");
               } else {
                 $("#loadBtn").val('Load More');
               }
