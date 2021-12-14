@@ -1,3 +1,19 @@
+<?php 
+
+    include 'includes/connection.php'; 
+
+    $con = openCon(); // open connection
+    $dbSelected = $con->select_db('youthden_ecommerce'); // select database
+    if (!$dbSelected) {
+        die("Can\'t use test_db : " . mysql_error());
+    }
+
+session_start();
+
+ ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +42,7 @@
                                 <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.php">shop</a>
+                                <a class="nav-link" href="shop.php">shop</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.php">about</a>
@@ -59,62 +75,54 @@
         <div class="container">
             <div class="bag">
                 <h2>your bag</h2>
+
                 <div class="header">
-                    <ul>
-                        <li>Item</li>
-                        <li>Size</li>
-                        <li>Quantity</li>
-                        <li>Price</li>
-                        <li></li>
-                    </ul>
+                    <table class="table-item">
+                         <tr>
+                            <th>ID</th>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+
+                        <?php 
+
+                        $total_price = 0;
+
+                            if (!empty($_SESSION['cart'])) {
+                        
+                                foreach ($_SESSION['cart'] as $key => $value) { ?>
+                                <tr>
+                                    <td><?php echo $value['id']; ?></td>
+                                    <td><?php echo $value['product_name']; ?></td>
+                                    <td><?php echo $value['quantity']; ?></td>
+                                    <td><?php echo $value['product_price']; ?></td>
+                                    <td>
+                                        <button class="remove" id="<?php echo $value['id']; ?>">Remove</button>
+                                    </td> 
+                                </tr>
+
+                             <?php $total_price = $total_price + $value['quantity'] * $value['product_price']; ?>
+                        
+                        <?php }
+                    }else { ?>
+                        <tr>
+                            <td colspan="5" class="tbl-nodata">NO ITEM SELECTED</td>
+                        </tr>
+                    <?php }
+                 ?>
+
+            </table>
+                    </table>
                 </div>
-                <div class="item num1">
-                    <ul>
-                        <li><img src="public/images/shirts/shirt front only/hightimes.png" alt=""></li>
-                        <div class="details">
-                            <div class="productName_price">
-                                <li class="productName">Hightimes</li>
-                                <li class="productPrice">PHP 750.00</li>
-                            </div>
-                            <li class="size">M</li>
-                            <div class="quantity">
-                                <li>Quantity: </li>
-                                <div class="count">
-                                    <li><img id="reduce" class="btn-quantity" src="public/images/icons/remove.png" alt=""></li>
-                                    <li>1</li>
-                                    <li><img id="add" class="btn-quantity" src="public/images/icons/plus.png" alt=""></li>
-                                </div>
-                            </div>
-                            <li><button class="remove">Remove</button></li>
-                        </div>
-                    </ul>
-                </div>
-                <div class="item num2">
-                    <ul>
-                        <li><img src="public/images/shirts/shirt front only/coffeeclub.png" alt=""></li>
-                        <div class="details">
-                            <div class="productName_price">
-                                <li class="productName">Coffee Club</li>
-                                <li class="productPrice">PHP 550.00</li>
-                            </div>
-                            <li class="size">M</li>
-                            <div class="quantity">
-                                <li>Quantity: </li>
-                                <div class="count">
-                                    <li><img id="reduce" class="btn-quantity" src="public/images/icons/remove.png" alt=""></li>
-                                    <li>1</li>
-                                    <li><img id="add" class="btn-quantity" src="public/images/icons/plus.png" alt=""></li>
-                                </div>
-                            </div>
-                            <li><button class="remove">Remove</button></li>
-                        </div>
-                    </ul>
-                </div>
+
+
                 <hr class="line">
                 <div class="receipt">
                     <div class="subtotal">
                         <p class="title">subtotal</p>
-                        <p class="price">PHP 1300.00</p>
+                        <p class="price">PHP <?php echo number_format($total_price,2); ?></p>
                     </div>
                     <div class="shipping">
                         <p class="title">shipping</p>
@@ -131,6 +139,29 @@
     <?php include 'includes/footer.php' ?>
 
     <script src="public/js/hamburger.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+
+        $(".remove").click(function(){
+           var id = $(this).attr("id");
+                
+           var action = "remove";
+
+             $.ajax({
+               method:"POST",
+               url:"action_cart.php",
+               data:{action:action,id:id},
+               success:function(data){
+                  alert("You have remove an item with ID "+id+".");
+               }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

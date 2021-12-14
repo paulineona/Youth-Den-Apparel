@@ -529,6 +529,7 @@ footer .all-rights {
   line-height: 1.5;
   padding-top: 15px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .card a {
@@ -563,11 +564,30 @@ footer .all-rights {
   border-radius: 10px;
   background-color: #000000;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   cursor: pointer;
+  float: right;
+}
+.quantity {
+  width: 30%;
+  text-align: center;
+  padding: 5px;
+  margin: 25px 0 0 0;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #dadada;
+  font-family: "helveticaNeueLt";
+  font-size: 20px;
+  float: left;
 }
 
-.addtocart a {
+label {
+  float: left;
+  margin: 25px 0 0 0;
+  padding: 5px;
+} 
+
+.addtocart {
   text-decoration: none;
   color: #ffffff;
 }
@@ -576,7 +596,7 @@ footer .all-rights {
   background-color: #ffffff;
 }
 
-.addtocart:hover a {
+.addtocart:hover {
   color: #000000;
 }
 /*# sourceMappingURL=cart.css.map */

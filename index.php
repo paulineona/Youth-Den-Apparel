@@ -39,7 +39,7 @@
                                 <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.php">shop</a>
+                                <a class="nav-link" href="shop.php">shop</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.php">about</a>
