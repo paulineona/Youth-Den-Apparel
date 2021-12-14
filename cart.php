@@ -157,6 +157,7 @@ session_start();
                data:{action:action,id:id},
                success:function(data){
                   alert("You have remove an item with ID "+id+".");
+                  window.parent.location = window.parent.location.href;
                }
             });
         });
