@@ -83,8 +83,25 @@ session_start();
             <input type="email" name="cust_email" placeholder="Email Address" autocomplete="off" />
             <input type="text" name="cust_address" placeholder="Address" autocomplete="off"/>
             <input type="text" name="cust_phone" placeholder="Phone Number" autocomplete="off" />
-            <button type="submit" name="placeorder" class="placeorder"><a href="">place order</a></button>
+             <button type="submit" name="placeorder" class="placeorder" id="placeorder"><a href="#payment">place order</a></button>
           </form>
+           <div id="payment" class="modal">
+    <div class="modal__content">
+        <div id="title">Payment Succesful</div>
+        <div id="subtitle">Thank You!</div>
+
+        <p>
+            <br>An automated payment receipt has been sent to your email.<br> Have a nice day and stay safe fellow youth!
+
+        </p>
+
+        <div class="modal__footer">
+            <div id="subtitle">-youthden.<br></div>
+        </div>
+
+        <a href="#" class="modal__close">&times;</a>
+    </div>
+</div>
           <div class="order">
           
           
