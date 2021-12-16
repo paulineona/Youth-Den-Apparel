@@ -130,7 +130,7 @@ session_start();
                     </div>
                 </div>
                 <div class="checkout">
-                    <button class="btn-checkout"><a href="checkout.php">continue to checkout</a></button>
+                    <a href="checkout.php"><button class="btn-checkout">continue to checkout</button></a>
                 </div>
             </div>
         </div>

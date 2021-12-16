@@ -77,7 +77,7 @@
                     <p>Designed and created using extraordinary technology and the best trends of street 
                         fashion of the 20th century. A colection for the young, stylish and brave.</p>
                     <div class="explore">
-                        <button class="btn-explore">Explore</button>
+                        <button class="btn-explore"><a class="nav-link" href="shop.php">Explore</a></button>
                     </div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
         <div class="container">
             <div class="heading">
                 <h2>new collection</h2>
-                <button class="btn-explore2">Explore & Shop</button>
+                <button class="btn-explore2"><a class="nav-link" href="shop.php">Explore & Shop</a></button>
             </div>
             <div class="carousel">
                 <?php
