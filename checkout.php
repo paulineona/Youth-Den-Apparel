@@ -1,11 +1,27 @@
-<!DOCTYPE html>
+<?php 
+
+    include 'includes/connection.php'; 
+
+    $con = openCon(); // open connection
+    $dbSelected = $con->select_db('youthden_ecommerce'); // select database
+    if (!$dbSelected) {
+        die("Can\'t use test_db : " . mysql_error());
+    }
+
+session_start();
+
+ ?>
+
+
+
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop</title>
+    <title>Checkout</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="icon" type="image/png" href="public/images/logo/logo-arvene-ver.png" />
     <link rel="stylesheet" href="./public/css/checkout.css" />
@@ -27,7 +43,7 @@
                                 <a class="nav-link" href="index.php">home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="catalog.php">shop</a>
+                                <a class="nav-link" href="shop.php">shop</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.php">about</a>
@@ -62,24 +78,52 @@
         <div id="title">checkout</div>
         <div id="subtitle">billing details</div>
         <div class="d-flex">
-          <form action="" method="">
-            <input type="text" name="name" placeholder="Name" />
-            <input type="email" name="email" placeholder="Email Address" />
-            <input type="text" name="address" placeholder="Address" />
-            <input type="tel" name="phone" placeholder="Phone Number" />
+          <form action="cust_info.php" method="POST">
+            <input type="text" name="cust_name" placeholder="Name" autocomplete="off"/>
+            <input type="email" name="cust_email" placeholder="Email Address" autocomplete="off" />
+            <input type="text" name="cust_address" placeholder="Address" autocomplete="off"/>
+            <input type="text" name="cust_phone" placeholder="Phone Number" autocomplete="off" />
+            <button type="submit" name="placeorder" class="placeorder"><a href="">place order</a></button>
           </form>
           <div class="order">
+          
+          
+                        <?php 
+
+                        $total_price = 0;
+
+                            if (!empty($_SESSION['cart'])) {
+                        
+                                foreach ($_SESSION['cart'] as $key => $value) { ?>
+                                <tr>
+                                    <td><?php $value['id']; ?></td>
+                                    <td><?php $value['product_name']; ?></td>
+                                    <td><?php $value['quantity']; ?></td>
+                                    <td><?php $value['product_price']; ?></td>
+                                    <td>
+                                    </td> 
+                                </tr>
+
+                             <?php $total_price = $total_price + $value['quantity'] * $value['product_price']; ?>                        
+                        <?php }
+
+                    }else { ?>
+                        <tr>
+                            <td colspan="5" class="tbl-nodata">NO ITEM SELECTED</td>
+                        </tr>
+                    <?php }
+                 ?>
+
             <table>
               <tr>
                 <th colspan="2">Your order</th>
               </tr>
               <tr>
                 <td id="total">Total</td>
-                <td id="price">PHP 1300.00</td>
+                <td id="price"><?php echo number_format($total_price,2); ?></td>
               </tr>
             </table>
-            <br />
-            <button class="placeorder"><a href="">place order</a></button>
+    
           </div>
         </div>
       </div>
