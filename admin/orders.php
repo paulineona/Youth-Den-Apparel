@@ -8,7 +8,7 @@
         $page = 1;
     }
 
-    $numPerPage = 4;
+    $numPerPage = 10;
     $startFrom = ($page - 1) * $numPerPage;
 
     
@@ -17,7 +17,7 @@
     if (!$dbSelected) {
         die("Can\'t use test_db : " . mysql_error());
     }
-    $query = "SELECT * FROM tbl_products LIMIT $startFrom, $numPerPage"; // LIMIT 0, 4 
+    $query = "SELECT * FROM tbl_custinfo LIMIT $startFrom, $numPerPage"; // LIMIT 0, 4 
     $result = $con->query($query);
 
 ?>
@@ -49,38 +49,56 @@
         <table>
           <thead>
             <tr>
-              <th class="title">ID</th>
-              <th class="title">Name</th>
-              <th class="title">Email</th>
-              <th class="title">Total</th>
-              <th class="title">Date</th>
-              <th class="title">Actions</th>
+            <th class="title">ID</th>
+                            <th class="title">Name</th>
+                            <th class="title">Email</th>
+                            <th class="title">Address</th>
+                            <th class="title">Phone Number</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="data">41DE</td>
-              <td class="data">Marvin Mckinney</td>
-              <td class="data">marvin@example.com</td>
-              <td class="data">Php 5,600.00</td>
-              <td class="data">Oct. 19, 2021</td>
-              <td class="data">
-                <a href="#"><img id="editBtn" src="includes/assets/img/edit.png" alt=\\></a>
-                <a href="#"><img id="deleteBtn" src="includes/assets/img/bin.png" alt=\\></a>
-              </td>
-            </tr>
-            <tr>
-              <td class="data">2323</td>
-              <td class="data">Leslie Alexander</td>
-              <td class="data">leslie@example.com</td>
-              <td class="data">Php 11,540.00</td>
-              <td class="data">Oct. 24, 2021</td>
-              <td class="data">
-                <a href="#"><img id="editBtn" src="includes/assets/img/edit.png" alt=\\></a>
-                <a href="#"><img id="deleteBtn" src="includes/assets/img/bin.png" alt=\\></a>
-              </td>
+
+            <?php
+              while ($row = $result->fetch_array()) { // fetch data in sqli
+                  echo "<tr>";
+                      
+                      echo "<td class=\"data\">" . $row['id'] . "</td>";
+                      echo "<td class=\"data\">" . $row['cust_name'] . "</td>";
+                      echo "<td class=\"data\">" . $row['cust_email'] . "</td>";
+                      echo "<td class=\"data\">" . $row['cust_address'] . "</td>";
+                      echo "<td class=\"data\">" . $row['cust_phone'] . "</td>";
+                   
+                  echo "</tr>\n";
+              }
+            ?>
             </tr>
           </tbody>
+          </tbody>
+                    </table>
+      </div>
+      <div class="page-container">
+        <?php
+          $prQuery = "SELECT * FROM tbl_custinfo"; 
+          $prResult = $con->query($prQuery);         
+
+          $totalRecord = $prResult->num_rows; // total number of rows in database
+          $totalPage = ceil($totalRecord / $numPerPage); // ceil will convert to the whole number ex. 2.4 => 3
+
+          echo "<ul>";
+            if ($page > 1) {
+                echo "<li><a href='orders.php?page=".($page-1)."' class='btn-page prev'></a></li>";
+            }
+          
+            for ($i=1; $i < $totalPage; $i++) { 
+                echo "<li><a href='orders.php?page=".$i."'>$i</a></li>";
+            }
+          
+            if ($i > $page) {
+                echo "<li><a href='orders.php?page=".($page+1)."' class='btn-page next'></a></li>";
+            }
+          echo "</ul>";
+        ?>
       </div>
     </div>
   </div>
@@ -89,7 +107,9 @@
     closeCon($con); // close connection
   ?>
 
-  <script src="includes/assets/js/main.js"></script>
+<script src="includes/assets/js/main.js"></script>
+  <script src="includes/assets/js/modal.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </body>
 </html>
