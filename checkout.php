@@ -78,7 +78,7 @@ session_start();
         <div id="title">checkout</div>
         <div id="subtitle">billing details</div>
         <div class="d-flex">
-          <form action="cust_info.php" method="POST">
+         <form action="cust_info.php" method="POST" id="checkout-form">
             <input type="text" name="cust_name" placeholder="Name" autocomplete="off"/>
             <input type="email" name="cust_email" placeholder="Email Address" autocomplete="off" />
             <input type="text" name="cust_address" placeholder="Address" autocomplete="off"/>
@@ -134,6 +134,10 @@ session_start();
 
     <script src="public/js/app.js"></script>
     <script src="public/js/hamburger.js"></script>
+      <script>function submit() { 
+        document.getElementById("checkout-form").reset(); 
+        } 
+    </script>
 </body>
 
 </html>
